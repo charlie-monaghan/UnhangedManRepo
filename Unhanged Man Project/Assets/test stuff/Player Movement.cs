@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float rollSpeed;
+    [SerializeField] private float coolDownTime;
+    [SerializeField] private bool isInvincible;
     private bool isRight = true;
     private Rigidbody2D rigidBody2D;
     private enum State
@@ -18,12 +20,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private State state;
 
-    private bool isInvincible = false;
-
+    private bool isCoolingDown = false;
+    
     private Vector3 rollDirection;
 
     void Start()
     {
+        isInvincible = false;
         state = State.Moving;
         rigidBody2D = GetComponent<Rigidbody2D>();
     }
@@ -58,13 +61,14 @@ public class PlayerMovement : MonoBehaviour
                 rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
             //Add a check for on the ground, right click
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (Input.GetKeyDown(KeyCode.F) && !isCoolingDown)
             {
                 //rigidBody2D.AddForce(new Vector2(rollSpeed * moveInput, 0), ForceMode2D.Impulse);
                 rollSpeed = 0.5f;
                 state = State.Rolling;
                 rollDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0).normalized;
                 isInvincible = true;
+                StartCoroutine(CoolDown());
             }
             break;
 
@@ -90,6 +94,12 @@ public class PlayerMovement : MonoBehaviour
                 transform.position += rollDirection * rollSpeed;
                 break;
         }
+    }
+    private IEnumerator CoolDown()
+    {
+        isCoolingDown = true;
+        yield return new WaitForSeconds(coolDownTime);
+        isCoolingDown = false;
     }
     public bool IsInvincible()
     {
