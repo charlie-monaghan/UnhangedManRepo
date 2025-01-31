@@ -1,5 +1,5 @@
 //Created by: charlie
-//Edited by:
+//Edited by: eddie
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -56,12 +56,14 @@ public class PlayerMovement : MonoBehaviour
             }
     
             //jump button
-            if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(rigidBody2D.linearVelocity.y) < 0.001f)
+            if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(rigidBody2D.linearVelocity.y) < 0.001f) // when you press space and are "grounded"
             {
-                rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse); // applies upwards force to jump
             }
+
+            //roll button
             //Add a check for on the ground, right click
-            if (Input.GetKeyDown(KeyCode.F) && !isCoolingDown)
+            if (Input.GetMouseButtonDown(1) && !isCoolingDown)
             {
                 //rigidBody2D.AddForce(new Vector2(rollSpeed * moveInput, 0), ForceMode2D.Impulse);
                 rollSpeed = 0.5f;
