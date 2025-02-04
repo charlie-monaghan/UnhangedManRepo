@@ -1,5 +1,5 @@
 //Created by: charlie
-//Edited by:
+//Edited by: eddie
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -103,6 +103,8 @@ public class PlayerMovement : MonoBehaviour
                     }
                 
             }
+
+            //roll button
             //Add a check for on the ground, right click
             if (Input.GetKeyDown(KeyCode.F) && !isCoolingDown && isGrounded)
             {

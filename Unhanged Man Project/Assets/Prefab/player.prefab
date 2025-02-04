@@ -11,13 +11,15 @@ GameObject:
   - component: {fileID: 7055936865470343437}
   - component: {fileID: 7507736162261438690}
   - component: {fileID: 3921653122898406525}
+  - component: {fileID: 2512376741709917404}
+  - component: {fileID: 7644480781009769948}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7055936865470343437
 Transform:
   m_ObjectHideFlags: 0
@@ -125,6 +127,46 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0000009536743, y: 0}
   m_Size: {x: 1.0000002, y: 2.0000005}
   m_Direction: 0
+--- !u!114 &2512376741709917404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296844395984362460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76f5add5d3adab40b6e4e10d0f2cbaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: -1
+--- !u!50 &7644480781009769948
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296844395984362460}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3363036027462566828
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,9 +268,10 @@ GameObject:
   - component: {fileID: 964724349177855652}
   - component: {fileID: 6255809955970602215}
   - component: {fileID: 653763757426926196}
+  - component: {fileID: 1044318638435711860}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -400,6 +443,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 10
+  rollSpeed: 0.5
+  coolDownTime: 0.75
+  isInvincible: 0
 --- !u!114 &653763757426926196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,4 +459,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attack: {fileID: 2296844395984362460}
-  attackDuration: 1
+  attackDuration: 0.33
+--- !u!114 &1044318638435711860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6166363885801643978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2563f538e310c9a45b71e5d243a796b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
