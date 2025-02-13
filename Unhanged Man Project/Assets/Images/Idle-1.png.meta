@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8becda2c97b07774ea0fbe82e5531e9a
+guid: d4cf2e2573623db4dbe44175d4106398
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1000151928829020125
-    second: GreyButton_0
+      213: 720765414803502515
+    second: Idle-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GreyButton_0
+      name: Idle-1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 781
-        height: 434
+        x: 460
+        y: 285
+        width: 865
+        height: 1649
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32879b8ae1fbe12f0800000000000000
-      internalID: -1000151928829020125
+      spriteID: 3b5ffb3735ca00a00800000000000000
+      internalID: 720765414803502515
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GreyButton_0: -1000151928829020125
+      Idle-1_0: 720765414803502515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

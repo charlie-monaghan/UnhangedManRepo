@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8becda2c97b07774ea0fbe82e5531e9a
+guid: 50f51f9152fea044cb7f7d9dfbf34184
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1000151928829020125
-    second: GreyButton_0
+      213: 739905185230883310
+    second: Inventory_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GreyButton_0
+      name: Inventory_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 781
-        height: 434
+        x: 15
+        y: 5
+        width: 376
+        height: 381
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32879b8ae1fbe12f0800000000000000
-      internalID: -1000151928829020125
+      spriteID: ee9082588dba44a00800000000000000
+      internalID: 739905185230883310
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GreyButton_0: -1000151928829020125
+      Inventory_0: 739905185230883310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
