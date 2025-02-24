@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Axe
   weaponSprite: {fileID: -358970036792669379, guid: 5bff0abe55524cc47b4b01e978f253f8, type: 3}
-  damage: 8
+  damage: 10
+  startupLength: 0.5
+  attackLength: 0.8
+  recoveryLength: 0.04

@@ -18,10 +18,10 @@ public class WeaponPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            WeaponHandler weaponHandler = other.GetComponent<WeaponHandler>();
+            PlayerAttack weaponHandler = other.GetComponent<PlayerAttack>();
             if (weaponHandler != null)
             {
-                weaponHandler.newWeapon(givenWeapon);
+                weaponHandler.NewWeapon(givenWeapon);
                 this.gameObject.SetActive(false);
             }
         }
