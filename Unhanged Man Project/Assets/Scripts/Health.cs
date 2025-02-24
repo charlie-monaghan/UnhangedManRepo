@@ -19,9 +19,15 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void ChangeHealth(int changeAmount)
+    public void HealHealth(int healing)
     {
-        currentHealth += changeAmount; // applies changeAmount to current
+        currentHealth += healing; // applies healing
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // clamps health value if it goes over max or under 0
+    }
+
+    public void DamageHealth(int damage)
+    {
+        currentHealth -= damage; // applies damage
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // ditto
     }
 }
