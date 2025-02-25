@@ -1,11 +1,16 @@
 using UnityEngine;
 using Pathfinding;
 using System.IO;
+using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
 
     public Transform target;
+
+    [SerializeField] private GameObject Attack;
+    [SerializeField] private float enemyAttackLength;
+    bool isAttacking = false;
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -15,6 +20,8 @@ public class EnemyAI : MonoBehaviour
     Pathfinding.Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
+    bool playerDetected = false;
+    [SerializeField] float playerDetectionRange;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -22,13 +29,18 @@ public class EnemyAI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Attack.SetActive(false);
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (!playerDetected && Mathf.Abs(rb.position.x - target.position.x) < playerDetectionRange)
+        {
+            playerDetected = true;
+        }
+        if (seeker.IsDone() && playerDetected)
         {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
@@ -51,7 +63,7 @@ public class EnemyAI : MonoBehaviour
 
         if (reachedEndOfPath)
         {
-            EnemyAttack();
+            StartCoroutine(AttackPlayer());
         }
         if (currentWaypoint >= path.vectorPath.Count)
         {
@@ -81,8 +93,13 @@ public class EnemyAI : MonoBehaviour
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
     }
-    void EnemyAttack()
+    private IEnumerator AttackPlayer()
     {
-
+        if (isAttacking) { yield break; }
+        isAttacking = true;
+        Attack.SetActive(true); // turn damage field on
+        yield return new WaitForSeconds(enemyAttackLength); // wait for attack to finish
+        Attack.SetActive(false); // turn damage field off
+        isAttacking= false;
     }
 }
