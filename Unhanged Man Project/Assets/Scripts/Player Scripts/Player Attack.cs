@@ -51,10 +51,10 @@ public class PlayerAttack : MonoBehaviour
     }
     public void PassDamageThrough()
     {
-        attackVolume.AssignDamage(currentWeapon.damage);
+        attackVolume.AssignDamage(currentWeapon.damage); // makes sure attack volume has correct damage at attack time
     }
 
-    public void NewWeapon(Weapon otherWeapon)
+    public void NewWeapon(Weapon otherWeapon) // if player has only one weapon, adds weapon to second slot, if not, will drop and swap equipped
     {
         if(secondWeapon == null)
         {

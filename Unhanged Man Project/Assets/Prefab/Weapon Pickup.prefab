@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   givenWeapon: {fileID: 0}
+  pickupPrefab: {fileID: 968631080481191729}
 --- !u!70 &2673874220422640067
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
