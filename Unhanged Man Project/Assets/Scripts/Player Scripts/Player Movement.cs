@@ -1,5 +1,5 @@
 //Created by: charlie
-//Edited by: eddie
+//Edited by: eddie and Carter
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float coolDownTime;
     [SerializeField] private bool isInvincible;
     [SerializeField] private bool isGrounded;
+    [SerializeField] private bool isGroundedForAnimator; //has a larger radius to update animation quicker
     [SerializeField] private bool isTouchingWall;
     [SerializeField] private bool isWallSliding;
     [SerializeField] private bool canWallJump;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Detection")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
+    [SerializeField] private float groundCheckForAnimatorRadius = 0.6f;
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Wall Detection")]
@@ -42,66 +44,97 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 rollDirection;
     private float moveInput;
 
+    Animator anim;
+
     void Start()
     {
         isInvincible = false;
         state = State.Moving;
         isGrounded = false;
+        isGroundedForAnimator = false;
         rigidBody2D = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGroundedForAnimator = Physics2D.OverlapCircle(groundCheck.position, groundCheckForAnimatorRadius, groundLayer);
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, wallLayer);
         switch (state) {
         case State.Moving:
+            //Grounded check for animator
+            if (isGroundedForAnimator)
+            {
+                anim.SetBool("Grounded", true);
+            }
+            else
+            {
+                anim.SetBool("Grounded", false);
+            }
+
             if (isTouchingWall && !isGrounded && rigidBody2D.linearVelocity.y < 0)
             {
                 isWallSliding = true;
+                anim.SetBool("IsWallSliding", true);
                 rigidBody2D.linearVelocity = new Vector2(0, rigidBody2D.linearVelocity.y * wallSlideSpeed);
             }
             else
             {
                 isWallSliding = false;
+                anim.SetBool("IsWallSliding", false);
             }
+
             //movement
             moveInput = Input.GetAxisRaw("Horizontal");
             if (!isWallSliding && !canWallJump)
             {
                 transform.position += new Vector3(moveInput, 0, 0) * speed * Time.deltaTime;
+                if (moveInput != 0f)
+                {
+                    PlayerAnimationScript.isMovingX = true;
+                }
+                else if (moveInput == 0f)
+                {
+                    PlayerAnimationScript.isMovingX = false;
+                }
             }
             
 
             //fliping sprite
-            if (moveInput > 0 && !isRight)
+            if (!PlayerAttack.isAttacking) //Can't flip while attacking
             {
-                Vector3 currentScale = transform.localScale; //fetching current scale
-                currentScale.x *= -1; //inversing current scale
-                transform.localScale = currentScale; //reassigning current scale
-                isRight = !isRight; //toggle isRight
-            }
-            else if (moveInput < 0 && isRight)
-            {
-                Vector3 currentScale = transform.localScale;
-                currentScale.x *= -1;
-                transform.localScale = currentScale;
-                isRight = !isRight;
+                if (moveInput > 0 && !isRight)
+                {
+                    Vector3 currentScale = transform.localScale; //fetching current scale
+                    currentScale.x *= -1; //inversing current scale
+                    transform.localScale = currentScale; //reassigning current scale
+                    isRight = !isRight; //toggle isRight
+                }
+                else if (moveInput < 0 && isRight)
+                {
+                    Vector3 currentScale = transform.localScale;
+                    currentScale.x *= -1;
+                    transform.localScale = currentScale;
+                    isRight = !isRight;
+                }
             }
     
             //jump button
             //&& Mathf.Abs(rigidBody2D.linearVelocity.y) < 0.001f
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                    if (isGrounded)
-                    {
-                        rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-                    }
-                    else if (isWallSliding)
-                    {
-                        WallJump();
-                    }
-                
+                if (isGrounded)
+                {
+                    anim.SetTrigger("Jump");
+                    rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                    
+                }
+                else if (isWallSliding)
+                {
+                    anim.SetTrigger("Jump");
+                    WallJump();
+                }
             }
 
             //roll button
