@@ -1,13 +1,20 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 3;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
 
-    void Start()
+    public event Action onHealthChanged;
+
+    void Awake()
     {
         currentHealth = maxHealth;
+    }
+    private void Start()
+    {
+        
     }
 
     void Update()
@@ -19,9 +26,24 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void ChangeHealth(int changeAmount)
+    public void HealHealth(int healing)
     {
-        currentHealth += changeAmount; // applies changeAmount to current
+        currentHealth += healing; // applies healing
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // clamps health value if it goes over max or under 0
+
+        onHealthChanged?.Invoke();
+    }
+
+    public void DamageHealth(int damage)
+    {
+        currentHealth -= damage; // applies damage
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // ditto
+
+        onHealthChanged?.Invoke();
+    }
+
+    public int ReturnHealth()
+    {
+        return currentHealth;
     }
 }
