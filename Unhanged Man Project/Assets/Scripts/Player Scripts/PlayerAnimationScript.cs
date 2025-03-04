@@ -34,7 +34,7 @@ public class PlayerAnimationScript : MonoBehaviour
         {
             frameCounter++;
 
-            if (frameCounter >= 3)
+            if (frameCounter >= 2)
             {
                 anim.SetBool("IsMovingX", false);
                 frameCounter = 0;

@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Detection")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
-    [SerializeField] private float groundCheckForAnimatorRadius = 0.6f;
+    [SerializeField] private float groundCheckForAnimatorRadius = 0.4f;
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Wall Detection")]
