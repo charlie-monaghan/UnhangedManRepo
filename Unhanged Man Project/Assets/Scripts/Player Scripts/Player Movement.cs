@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
             //roll button
             //Add a check for on the ground, right click
-            if (Input.GetKeyDown(KeyCode.F) && !isCoolingDown && isGrounded)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && !isCoolingDown && isGrounded)
             {
                 //rigidBody2D.AddForce(new Vector2(rollSpeed * moveInput, 0), ForceMode2D.Impulse);
                 rollSpeed = 0.5f;
