@@ -1,5 +1,5 @@
 //Created by: Charlie
-//Edited by:
+//Edited by: Carter
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,11 +7,12 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private GameObject Attack;
+    [SerializeField] private float attackDuration = 1.0f;
+    public static bool isAttacking = false;
     [SerializeField] public Weapon currentWeapon;
     [SerializeField] public Weapon secondWeapon;
 
     private Attack attackVolume;
-    private bool isAttacking = false;
 
     void Start()
     {
