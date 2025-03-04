@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
         currentHealth += healing; // applies healing
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // clamps health value if it goes over max or under 0
 
-        onHealthChanged?.Invoke();
+        onHealthChanged?.Invoke(); // alert listeners (in draw player health)
     }
 
     public void DamageHealth(int damage)
@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
         currentHealth -= damage; // applies damage
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // ditto
 
-        onHealthChanged?.Invoke();
+        onHealthChanged?.Invoke(); // ditto
     }
 
     public int ReturnHealth()

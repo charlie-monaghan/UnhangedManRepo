@@ -1,5 +1,6 @@
 //Created by: Charlie
 //Edited by:
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class PlayerAttack : MonoBehaviour
 
     private Attack attackVolume;
     private bool isAttacking = false;
+
+    public event Action onWeaponChange;
+
 
     void Start()
     {
@@ -66,6 +70,8 @@ public class PlayerAttack : MonoBehaviour
             currentWeapon = otherWeapon;
             Debug.Log("swapped current weapon to " + currentWeapon.weaponName);
         }
+
+        onWeaponChange?.Invoke();
         //currentWeapon = otherWeapon; // pick up weapon
         //Debug.Log("equiped new weapon: " + otherWeapon.weaponName);
     }
@@ -77,6 +83,7 @@ public class PlayerAttack : MonoBehaviour
             Weapon swap = secondWeapon;
             secondWeapon = currentWeapon;
             currentWeapon = swap;
+            onWeaponChange?.Invoke();
             Debug.Log("Swapped weapon to: " + currentWeapon.weaponName);
         }
         else
