@@ -299,10 +299,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 6255809955970602215, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
-      propertyPath: wallLayer.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 6425401589095377331, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.44
@@ -652,10 +648,6 @@ PrefabInstance:
     - target: {fileID: 784246739958564618, guid: 018640cd62ee89f4db2f50c148c5bfb3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2754525321362926241, guid: 018640cd62ee89f4db2f50c148c5bfb3, type: 3}
-      propertyPath: data.dataString
-      value: UEsDBBQAAAgIAACYn+vOLBT7WwIAABEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3HJgSS3lpDSA9JmJBOLr4IaY01yJJHHwGS4b93JdvYodMT4r23u29XK38SoWwNzGmzNII/ag7kx4iEM/k26skHONCtVmvxAZ3mTXBXBhGNmhfqhEY8DWFWV+CMYD/VVgZxgqBXotCmWvAtZNo6i3BBpQWkjHYhWiH0OSIH/Lm6CyFHPI1n4fSBp7tkdMIjA+XA9NJO2MkalVdM0qoGHiz34nGnTm+iTGEzrSIYZ1pKYVsnxB3r2GlGa+uxDxRwQbGzWD7oSxDb0oW8w+DnorDgWkuGHufC4ICarOSXbqZWUbtrfL1T6UOd6SRaanI+/kNfpZEujK4eurJpEkq4UrDdCz0yat1gqkN4/tW3V3sqd3Qj4a0E9aSXRnvFkXTGh1BvYTzv/547y0pgux5vrF6Avv7/3YQeTrH5QyZFtQnU90kDrKWO4443DwYv5jcajnth2xSIBhd/LLzS7XCBWuJeGOuQartUwd5GexOkZBFnFrrxLtNGQYRb0zUoKt1xhWnc5Q1ecIOyF8w9DU+lLd5y3Qu4CIlwr0+SC2ql9+fLsqXeP4Itn72TQkFvOhBPOKdMK9Us2HAmXdjam4KyQdjWC/51tchmNk3u6PTmGpJZsbndXI3ZLLlmt9ecT9I0nd6SuHtCYZ9Urhqj7Xjw1lSfXOGedV+Q0dLQOi47N3S/FB+VHoxcqEKvmQFQz02Gs3EwWAQfJV9wgQNag3NCxfsmnzmRmu2A5+dEeex0cXCG5n2WnNTiXbuA5CSLn4ycBPi8yysD7wL2oXiX7EROfwFQSwMEFAAACAgAAJif62Th9WptAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKSuZmBZaKZqXGqgXlakkWSrlGyuYFxsoVxSoqJoaGhmYVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAJif684sFPtbAgAAEQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAJif62Th9WptAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
       objectReference: {fileID: 0}
     - target: {fileID: 7565524137293854478, guid: 018640cd62ee89f4db2f50c148c5bfb3, type: 3}
       propertyPath: m_Name
