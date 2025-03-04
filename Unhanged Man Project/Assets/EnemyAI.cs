@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private GameObject Attack;
     [SerializeField] private float enemyAttackLength;
     bool isAttacking = false;
+    [SerializeField] private float attackCooldownTime;
+    bool coolDownActive = false;
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -63,7 +65,12 @@ public class EnemyAI : MonoBehaviour
 
         if (reachedEndOfPath)
         {
-            StartCoroutine(AttackPlayer());
+            if (!coolDownActive)
+            {
+                StartCoroutine(AttackPlayer());
+                StartCoroutine(Cooldown());
+            }
+            
         }
         if (currentWaypoint >= path.vectorPath.Count)
         {
@@ -84,11 +91,11 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (force.x >= 0.01f)
+        if (force.x >= 0.01f && !isAttacking)
         {
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if (force.x <= -0.01f)
+        else if (force.x <= -0.01f && !isAttacking)
         {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
@@ -101,5 +108,11 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(enemyAttackLength); // wait for attack to finish
         Attack.SetActive(false); // turn damage field off
         isAttacking= false;
+    }
+    private IEnumerator Cooldown()
+    {
+        coolDownActive = true;
+        yield return new WaitForSeconds(attackCooldownTime);
+        coolDownActive = false;
     }
 }
