@@ -1,5 +1,6 @@
 //Created by: Charlie
 //Edited by: Carter
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] public Weapon secondWeapon;
 
     private Attack attackVolume;
+
+    public event Action onWeaponChange;
 
     void Start()
     {
@@ -67,6 +70,7 @@ public class PlayerAttack : MonoBehaviour
             currentWeapon = otherWeapon;
             Debug.Log("swapped current weapon to " + currentWeapon.weaponName);
         }
+        onWeaponChange?.Invoke();
         //currentWeapon = otherWeapon; // pick up weapon
         //Debug.Log("equiped new weapon: " + otherWeapon.weaponName);
     }
@@ -85,5 +89,6 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("No second weapon");
             return;
         }
+        onWeaponChange?.Invoke();
     }
 }
