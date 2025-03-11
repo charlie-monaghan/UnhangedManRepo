@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Wall Detection")]
     public Transform wallCheck;
     public float wallCheckRadius = 0.2f;
-    public LayerMask wallLayer;
 
     private bool isRight = true;
     private Rigidbody2D rigidBody2D;
@@ -60,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         isGroundedForAnimator = Physics2D.OverlapCircle(groundCheck.position, groundCheckForAnimatorRadius, groundLayer);
-        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, wallLayer);
+        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
         switch (state) {
         case State.Moving:
             //Grounded check for animator

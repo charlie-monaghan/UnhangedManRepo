@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     bool isAttacking = false;
     [SerializeField] private float attackCooldownTime;
     bool coolDownActive = false;
+    [SerializeField] private bool bodyIsWeapon = false;
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -31,7 +32,10 @@ public class EnemyAI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Attack.SetActive(false);
+        if (!bodyIsWeapon)
+        {
+            Attack.SetActive(false);
+        }
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, 0.5f);
@@ -63,14 +67,18 @@ public class EnemyAI : MonoBehaviour
         if (path == null)
             return;
 
+        if (bodyIsWeapon)
+        {
+            rb.MoveRotation(rb.rotation + 137f * Time.fixedDeltaTime);
+        }
+
         if (reachedEndOfPath)
         {
-            if (!coolDownActive)
+            if (!coolDownActive && !bodyIsWeapon)
             {
                 StartCoroutine(AttackPlayer());
                 StartCoroutine(Cooldown());
             }
-            
         }
         if (currentWaypoint >= path.vectorPath.Count)
         {
