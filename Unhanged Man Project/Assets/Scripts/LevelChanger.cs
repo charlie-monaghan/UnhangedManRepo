@@ -5,7 +5,15 @@ public class LevelChanger : MonoBehaviour
 {
     [SerializeField] private string SceneName;
 
-    public void changeScene()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            DedicatedSceneChange();
+        }
+    }
+
+    public void DedicatedSceneChange()
     {
         SceneManager.LoadScene(SceneName);
     }
