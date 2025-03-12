@@ -21,6 +21,18 @@ public class PlayerAttack : MonoBehaviour
     {
         Attack.SetActive(false); // make sure the damage field is off when game loads (redundancy)
         attackVolume = Attack.GetComponent<Attack>();
+
+        if(PlayerManager.instance != null )
+        {
+            if(PlayerManager.instance.currentWeapon != null)
+            {
+                currentWeapon = PlayerManager.instance.currentWeapon;
+            }
+            if(PlayerManager.instance.secondWeapon != null)
+            {
+                secondWeapon = PlayerManager.instance.secondWeapon;
+            }
+        }
     }
 
     void Update()
@@ -70,9 +82,9 @@ public class PlayerAttack : MonoBehaviour
             currentWeapon = otherWeapon;
             Debug.Log("swapped current weapon to " + currentWeapon.weaponName);
         }
+
+        PlayerManager.instance.SavePlayerData(PlayerManager.instance.playerHealth, currentWeapon, secondWeapon);
         onWeaponChange?.Invoke();
-        //currentWeapon = otherWeapon; // pick up weapon
-        //Debug.Log("equiped new weapon: " + otherWeapon.weaponName);
     }
 
     public void SwapWeapon()
@@ -89,6 +101,8 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("No second weapon");
             return;
         }
+
+        PlayerManager.instance.SavePlayerData(PlayerManager.instance.playerHealth, currentWeapon, secondWeapon);
         onWeaponChange?.Invoke();
     }
 }
