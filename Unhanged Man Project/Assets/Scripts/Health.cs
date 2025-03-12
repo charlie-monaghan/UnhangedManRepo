@@ -14,7 +14,10 @@ public class Health : MonoBehaviour
     }
     private void Start()
     {
-        
+        if (tag == "Player")
+        {
+            currentHealth = GameManager.Instance.playerHealth > 0 ? GameManager.Instance.playerHealth : maxHealth;
+        }
     }
 
     void Update()
@@ -31,6 +34,11 @@ public class Health : MonoBehaviour
         currentHealth += healing; // applies healing
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // clamps health value if it goes over max or under 0
 
+        if(tag == "Player")
+        {
+            GameManager.Instance.playerHealth = currentHealth;
+        }
+
         onHealthChanged?.Invoke();
     }
 
@@ -38,6 +46,11 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage; // applies damage
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // ditto
+
+        if (tag == "Player")
+        {
+            GameManager.Instance.playerHealth = currentHealth;
+        }
 
         onHealthChanged?.Invoke();
     }
