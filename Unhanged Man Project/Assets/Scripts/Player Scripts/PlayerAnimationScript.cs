@@ -1,6 +1,6 @@
 //Created by: Carter
 using UnityEditor;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerAnimationScript : MonoBehaviour
