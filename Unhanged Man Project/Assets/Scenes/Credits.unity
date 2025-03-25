@@ -518,7 +518,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 706852283}
         m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
-        m_MethodName: changeScene
+        m_MethodName: DedicatedSceneChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
