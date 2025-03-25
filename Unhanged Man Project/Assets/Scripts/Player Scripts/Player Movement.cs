@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool canWallJump;
     [SerializeField] private float wallSlideSpeed; //0.5f
     [SerializeField] private float wallJumpForce; //2.0f
+    [SerializeField] private AudioClip jumpClip;
+    private AudioSource audioSource;
 
     [Header("Ground Detection")]
     [SerializeField] private Transform groundCheck;
@@ -28,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Wall Detection")]
     public Transform wallCheck;
     public float wallCheckRadius = 0.2f;
-    public LayerMask wallLayer;
 
     private bool isRight = true;
     private Rigidbody2D rigidBody2D;
@@ -54,13 +55,14 @@ public class PlayerMovement : MonoBehaviour
         isGroundedForAnimator = false;
         rigidBody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         isGroundedForAnimator = Physics2D.OverlapCircle(groundCheck.position, groundCheckForAnimatorRadius, groundLayer);
-        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, wallLayer);
+        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
         switch (state) {
         case State.Moving:
             //Grounded check for animator
@@ -77,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 isWallSliding = true;
                 anim.SetBool("IsWallSliding", true);
+                anim.SetBool("Grounded", false);
+                PlayerAnimationScript.isMovingX = false;
                 rigidBody2D.linearVelocity = new Vector2(0, rigidBody2D.linearVelocity.y * wallSlideSpeed);
             }
             else
@@ -128,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     anim.SetTrigger("Jump");
                     rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-                    
+                    audioSource.PlayOneShot(jumpClip);
                 }
                 else if (isWallSliding)
                 {
@@ -175,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void WallJump()
     {
+        audioSource.PlayOneShot(jumpClip);
         canWallJump = true;
         
         float axis;
