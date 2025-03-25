@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Background
   - Enemy
+  - PersistentAudioSource
   layers:
   - Default
   - TransparentFX
