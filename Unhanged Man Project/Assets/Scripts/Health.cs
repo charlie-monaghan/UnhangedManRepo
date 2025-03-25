@@ -19,6 +19,11 @@ public class Health : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         persSource = GameObject.FindGameObjectWithTag("PersistentAudioSource").GetComponent<AudioSource>();
+        if (tag == "Player")
+        {
+            //currentHealth = PlayerManager.Instance.playerHealth > 0 ? PlayerManager.Instance.playerHealth : maxHealth;
+            currentHealth = PlayerManager.instance.playerHealth > 0 ? PlayerManager.instance.playerHealth : maxHealth;
+        }
     }
 
     void Update()
@@ -36,6 +41,11 @@ public class Health : MonoBehaviour
         currentHealth += healing; // applies healing
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // clamps health value if it goes over max or under 0
 
+        if(tag == "Player")
+        {
+            PlayerManager.instance.playerHealth = currentHealth;
+        }
+
         onHealthChanged?.Invoke();
     }
 
@@ -44,6 +54,11 @@ public class Health : MonoBehaviour
         audioSource.PlayOneShot(damageSound);
         currentHealth -= damage; // applies damage
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // ditto
+
+        if (tag == "Player")
+        {
+            PlayerManager.instance.playerHealth = currentHealth;
+        }
 
         onHealthChanged?.Invoke();
     }
