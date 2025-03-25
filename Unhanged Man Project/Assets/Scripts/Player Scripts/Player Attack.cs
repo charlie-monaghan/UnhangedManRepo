@@ -12,6 +12,10 @@ public class PlayerAttack : MonoBehaviour
     public static bool isAttacking = false;
     [SerializeField] public Weapon currentWeapon;
     [SerializeField] public Weapon secondWeapon;
+    
+    // player sfx control
+    [SerializeField] private AudioClip attackSFX;
+    private AudioSource audioSource;
 
     private Attack attackVolume;
 
@@ -21,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Attack.SetActive(false); // make sure the damage field is off when game loads (redundancy)
         attackVolume = Attack.GetComponent<Attack>();
+        audioSource = GetComponent<AudioSource>(); // initialize audi
 
         if(PlayerManager.instance != null )
         {
@@ -54,6 +59,8 @@ public class PlayerAttack : MonoBehaviour
         if (isAttacking) yield break; // if attack is already happening, break
 
         isAttacking = true; // player is attacking
+        audioSource.PlayOneShot(attackSFX); // player attack sound plays
+
         yield return new WaitForSeconds(currentWeapon.startupLength); // wait for the start up before attack can hit
         PassDamageThrough(); // make sure attack volume deals correct damage
 
