@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
 
     public event Action onHealthChanged;
 
+    public event Action onBossEnemyDeath;
+
     void Awake()
     {
         currentHealth = maxHealth;
@@ -33,6 +35,7 @@ public class Health : MonoBehaviour
         {
             persSource.PlayOneShot(damageSound);
             gameObject.SetActive(false);
+            onBossEnemyDeath?.Invoke();
         }
     }
 
