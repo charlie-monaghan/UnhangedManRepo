@@ -23,7 +23,6 @@ public class Health : MonoBehaviour
         persSource = GameObject.FindGameObjectWithTag("PersistentAudioSource").GetComponent<AudioSource>();
         if (tag == "Player")
         {
-            //currentHealth = PlayerManager.Instance.playerHealth > 0 ? PlayerManager.Instance.playerHealth : maxHealth;
             currentHealth = PlayerManager.instance.playerHealth > 0 ? PlayerManager.instance.playerHealth : maxHealth;
         }
     }
@@ -46,7 +45,7 @@ public class Health : MonoBehaviour
 
         if(tag == "Player")
         {
-            PlayerManager.instance.playerHealth = currentHealth;
+            PlayerManager.instance.playerHealth = currentHealth; // updates the UI health
         }
 
         onHealthChanged?.Invoke();
@@ -60,7 +59,7 @@ public class Health : MonoBehaviour
 
         if (tag == "Player")
         {
-            PlayerManager.instance.playerHealth = currentHealth;
+            PlayerManager.instance.playerHealth = currentHealth; // updates UI health
         }
 
         onHealthChanged?.Invoke();

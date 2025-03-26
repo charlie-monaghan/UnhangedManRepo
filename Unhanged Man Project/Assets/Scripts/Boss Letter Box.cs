@@ -3,6 +3,7 @@ using UnityEngine;
 public class BossLetterBox : MonoBehaviour
 {
     [SerializeField] GameObject bossLetter;
+    [SerializeField] GameObject defeatedBossPlaceholder;
 
     Health bossEnemyHealth;
     SpriteRenderer spriteRenderer;
@@ -10,14 +11,14 @@ public class BossLetterBox : MonoBehaviour
 
     void Start()
     {
+        // get necessary pieces
         bossEnemyHealth = bossLetter.GetComponent<Health>();
-        spriteRenderer = bossLetter.GetComponent<SpriteRenderer>();
-        Sprite bossLetterSprite = spriteRenderer.sprite;
+        spriteRenderer = bossLetter.GetComponentInChildren<SpriteRenderer>();
+        bossLetterSprite = spriteRenderer.sprite;
 
         if(bossEnemyHealth != null)
         {
-            bossEnemyHealth.onBossEnemyDeath += DrawDeadEnemy;
-            DrawDeadEnemy();
+            bossEnemyHealth.onBossEnemyDeath += DrawDeadEnemy; // subscribe to Health.cs event that checks for when they die
         }
     }
 
@@ -37,6 +38,8 @@ public class BossLetterBox : MonoBehaviour
 
     private void DrawDeadEnemy()
     {
-        
+        GameObject letterInBox = Instantiate(defeatedBossPlaceholder, transform.position, Quaternion.identity); // instantiates an empty gameobject with a sprite renderer in the box
+        SpriteRenderer letterInBoxRenderer = letterInBox.GetComponent<SpriteRenderer>(); // gets the sprite renderer for the instantiated object
+        letterInBoxRenderer.sprite = bossLetterSprite; // sets the sprite to the enemy's that just died
     }
 }
