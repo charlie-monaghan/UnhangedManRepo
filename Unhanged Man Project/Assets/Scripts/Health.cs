@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     private AudioSource persSource;
 
     public event Action onHealthChanged;
+    public event Action onPlayerDeath;
 
     public event Action onBossEnemyDeath;
 
@@ -36,6 +37,10 @@ public class Health : MonoBehaviour
             persSource.PlayOneShot(damageSound);
             gameObject.SetActive(false);
             onBossEnemyDeath?.Invoke();
+        }
+        else if (currentHealth <= 0)
+        {
+            onPlayerDeath?.Invoke();
         }
     }
 
