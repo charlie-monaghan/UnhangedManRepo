@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     private AudioSource persSource;
 
     public event Action onHealthChanged;
+    public event Action onDeath;
 
     void Awake()
     {
@@ -33,6 +34,12 @@ public class Health : MonoBehaviour
         {
             persSource.PlayOneShot(damageSound);
             gameObject.SetActive(false);
+            onDeath?.Invoke();
+        }
+        else if (currentHealth <= 0)
+        {
+            //Play death animation
+            onDeath?.Invoke();
         }
     }
 
