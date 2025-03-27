@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Sword
   weaponSprite: {fileID: 7057801135558962131, guid: 5bff0abe55524cc47b4b01e978f253f8, type: 3}
-  damage: 5
+  damage: 4
+  knockbackForce: 8
   startupLength: 0.1
   attackLength: 0.35
   recoveryLength: 0.03
