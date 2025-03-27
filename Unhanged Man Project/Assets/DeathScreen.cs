@@ -12,7 +12,7 @@ public class DeathScreen : MonoBehaviour
         playerHealth = player.GetComponent<Health>();
         if (playerHealth != null) 
         {
-            playerHealth.onDeath += showDeathScreen;
+            playerHealth.onPlayerDeath += showDeathScreen;
         }
     }
 
@@ -20,7 +20,7 @@ public class DeathScreen : MonoBehaviour
     {
         if (playerHealth != null)
         {
-            playerHealth.onDeath -= showDeathScreen;
+            playerHealth.onPlayerDeath -= showDeathScreen;
         }
     }
 
@@ -32,6 +32,9 @@ public class DeathScreen : MonoBehaviour
 
     void showDeathScreen()
     {
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<PlayerAttack>().enabled = false;
+        //Play death animation
         deathScreen.SetActive(true);
     }
 }

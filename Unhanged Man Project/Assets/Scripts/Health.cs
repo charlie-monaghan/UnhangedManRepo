@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     private AudioSource persSource;
 
     public event Action onHealthChanged;
-    public event Action onDeath;
+    public event Action onPlayerDeath;
 
     public event Action onBossEnemyDeath;
 
@@ -40,8 +40,7 @@ public class Health : MonoBehaviour
         }
         else if (currentHealth <= 0)
         {
-            //Play death animation
-            onDeath?.Invoke();
+            onPlayerDeath?.Invoke();
         }
     }
 
