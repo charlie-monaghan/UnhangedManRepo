@@ -456,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 6198335965396164150, guid: 92e96a4e6e67c414ca044df19fe12364, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7160429211405778527, guid: 5bff0abe55524cc47b4b01e978f253f8, type: 3}
+      objectReference: {fileID: 7057801135558962131, guid: 5bff0abe55524cc47b4b01e978f253f8, type: 3}
     - target: {fileID: 6198335965396164150, guid: 92e96a4e6e67c414ca044df19fe12364, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -464,7 +464,7 @@ PrefabInstance:
     - target: {fileID: 6505569150565021262, guid: 92e96a4e6e67c414ca044df19fe12364, type: 3}
       propertyPath: givenWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: f36d0776e6260c549b3414b98c1a3e5d, type: 2}
+      objectReference: {fileID: 11400000, guid: 8f01583d284881542868d8140f8c149a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3863,7 +3863,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 44654945779887599, guid: aaf300643042d2a4b8c90ccab4455a12, type: 3}
       propertyPath: SceneName
-      value: Credits
+      value: Boss System Test
       objectReference: {fileID: 0}
     - target: {fileID: 946607243208954699, guid: aaf300643042d2a4b8c90ccab4455a12, type: 3}
       propertyPath: m_Name

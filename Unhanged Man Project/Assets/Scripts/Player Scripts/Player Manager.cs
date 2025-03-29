@@ -27,4 +27,16 @@ public class PlayerManager : MonoBehaviour
         currentWeapon = current;
         secondWeapon = second;
     }
+
+    public void ResetPlayerData()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null)
+        {
+            Health playerHealthComp = player.GetComponent<Health>();
+            playerHealth = playerHealthComp.maxHealth;
+        }
+        currentWeapon = null;
+        secondWeapon = null;
+    }
 }

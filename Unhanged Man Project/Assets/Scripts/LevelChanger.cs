@@ -22,4 +22,13 @@ public class LevelChanger : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void StartButton()
+    {
+        if (PlayerManager.instance != null)
+        {
+            PlayerManager.instance.ResetPlayerData();
+            DedicatedSceneChange();
+        }
+    }
 }

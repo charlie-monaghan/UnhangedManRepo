@@ -2155,7 +2155,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 44654945779887599, guid: aaf300643042d2a4b8c90ccab4455a12, type: 3}
       propertyPath: SceneName
-      value: Level_1
+      value: Credits
       objectReference: {fileID: 0}
     - target: {fileID: 946607243208954699, guid: aaf300643042d2a4b8c90ccab4455a12, type: 3}
       propertyPath: m_Name
