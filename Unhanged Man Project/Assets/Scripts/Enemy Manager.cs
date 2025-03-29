@@ -20,7 +20,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void defeatedEnemy()
+    public void DefeatedEnemy()
     {
         defeatedEnemies++;
         Debug.Log("Defeated enemies = " + defeatedEnemies);
