@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 3;
+    [SerializeField] public int maxHealth = 3;
     [SerializeField] private int currentHealth;
     [SerializeField] private AudioClip damageSound;
     private AudioSource audioSource;
