@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class BossLetterBox : MonoBehaviour
 {
-    [SerializeField] GameObject bossLetter;
-    [SerializeField] GameObject defeatedBossPlaceholder;
+    [SerializeField] private GameObject bossLetter;
+    [SerializeField] private GameObject defeatedBossPlaceholder;
+    [SerializeField] private EnemyManager manager;
 
     Health bossEnemyHealth;
     SpriteRenderer spriteRenderer;
@@ -44,5 +45,7 @@ public class BossLetterBox : MonoBehaviour
 
         SpriteRenderer letterInBoxRenderer = letterInBox.GetComponent<SpriteRenderer>(); // gets the sprite renderer for the instantiated object
         letterInBoxRenderer.sprite = bossLetterSprite; // sets the sprite to the enemy's that just died
+
+        manager.defeatedEnemy();
     }
 }
