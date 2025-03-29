@@ -27,15 +27,11 @@ public class PlayerAttack : MonoBehaviour
 
         if(PlayerManager.instance != null )
         {
-            if(PlayerManager.instance.currentWeapon != null)
-            {
-                currentWeapon = PlayerManager.instance.currentWeapon;
-            }
-            if(PlayerManager.instance.secondWeapon != null)
-            {
-                secondWeapon = PlayerManager.instance.secondWeapon;
-            }
+            currentWeapon = PlayerManager.instance.currentWeapon ?? currentWeapon;
+            secondWeapon = PlayerManager.instance.secondWeapon ?? secondWeapon;
         }
+
+        PlayerManager.instance.SavePlayerData(PlayerManager.instance.playerHealth, currentWeapon, secondWeapon);
     }
 
     void Update()
