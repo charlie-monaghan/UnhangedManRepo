@@ -3272,6 +3272,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1044318638435711860, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
+      propertyPath: healSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 148851e98a9486d40b3fcee0cca91ed4, type: 3}
+    - target: {fileID: 1044318638435711860, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
+      propertyPath: damageSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: c852d1b4db7b93c4ebcfaddcab324d1a, type: 3}
+    - target: {fileID: 1044318638435711860, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 880893079}
+    - target: {fileID: 1044318638435711860, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
       propertyPath: currentHealth
       value: 10
       objectReference: {fileID: 0}
