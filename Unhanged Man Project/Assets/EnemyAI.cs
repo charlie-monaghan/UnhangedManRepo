@@ -14,6 +14,17 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackCooldownTime;
     bool coolDownActive = false;
     [SerializeField] private bool bodyIsWeapon = false;
+    [SerializeField] private bool groundedEnemy = false;
+    [SerializeField] private bool canJump = false;
+    [SerializeField] private float jumpForce;
+    private bool isJumping = false;
+
+    //Wall detection
+    [Header("Wall Detection")]
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private float wallCheckRadius = 0.2f;
+    [SerializeField] private LayerMask groundLayer;
+    private bool isTouchingWall = false;
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -32,12 +43,17 @@ public class EnemyAI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         if (!bodyIsWeapon)
         {
             Attack.SetActive(false);
         }
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        if (groundedEnemy)
+        {
+            rb.gravityScale = 1.0f;
+        }
         InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
     void UpdatePath()
@@ -63,10 +79,9 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
         if (path == null)
             return;
-
         if (bodyIsWeapon)
         {
             rb.MoveRotation(rb.rotation + 137f * Time.fixedDeltaTime);
@@ -74,6 +89,10 @@ public class EnemyAI : MonoBehaviour
 
         if (reachedEndOfPath)
         {
+            if (groundedEnemy)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
             if (!coolDownActive && !bodyIsWeapon)
             {
                 StartCoroutine(AttackPlayer());
@@ -87,6 +106,11 @@ public class EnemyAI : MonoBehaviour
         } else
         {
             reachedEndOfPath= false;
+        }
+        //Jump for grounded enemy
+        if (isTouchingWall && !isJumping && canJump)
+        {
+            StartCoroutine(Jump());
         }
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
@@ -122,5 +146,12 @@ public class EnemyAI : MonoBehaviour
         coolDownActive = true;
         yield return new WaitForSeconds(attackCooldownTime);
         coolDownActive = false;
+    }
+    private IEnumerator Jump()
+    {
+        isJumping = true;
+        rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        yield return new WaitForSeconds(1);
+        isJumping = false;
     }
 }

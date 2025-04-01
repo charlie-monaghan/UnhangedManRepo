@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 993367795}
   - component: {fileID: 993367794}
   - component: {fileID: 993367793}
-  - component: {fileID: 993367792}
+  - component: {fileID: 993367796}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -626,19 +626,6 @@ RectTransform:
   m_AnchoredPosition: {x: 208.3, y: -111.7}
   m_SizeDelta: {x: 160, y: 49.79}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &993367792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993367790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: QUIT
 --- !u!114 &993367793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,9 +670,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 993367792}
-        m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
-        m_MethodName: quitButton
+      - m_Target: {fileID: 993367796}
+        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -733,6 +720,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993367790}
   m_CullTransparentMesh: 1
+--- !u!114 &993367796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993367790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56d84415f4c30b4a8ac6d7790f14a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1037600512
 GameObject:
   m_ObjectHideFlags: 0
