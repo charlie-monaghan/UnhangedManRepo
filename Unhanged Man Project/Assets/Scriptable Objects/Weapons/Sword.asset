@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b84c3e8add6c645a654f5ae13cb1fe, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  weaponName: Sword
-  weaponSprite: {fileID: 7057801135558962131, guid: 5bff0abe55524cc47b4b01e978f253f8, type: 3}
+  itemName: Sword
+  sprite: {fileID: 7057801135558962131, guid: 5bff0abe55524cc47b4b01e978f253f8, type: 3}
+  itemPrefab: {fileID: 0}
+  stackAmount: 0
   damage: 4
   knockbackForce: 8
   startupLength: 0.1

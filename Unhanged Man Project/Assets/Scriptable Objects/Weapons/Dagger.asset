@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b84c3e8add6c645a654f5ae13cb1fe, type: 3}
   m_Name: Dagger
   m_EditorClassIdentifier: 
-  weaponName: Dagger
-  weaponSprite: {fileID: 7160429211405778527, guid: 5bff0abe55524cc47b4b01e978f253f8, type: 3}
+  itemName: Dagger
+  sprite: {fileID: 7160429211405778527, guid: 5bff0abe55524cc47b4b01e978f253f8, type: 3}
+  itemPrefab: {fileID: 0}
+  stackAmount: 0
   damage: 2
   knockbackForce: 5
   startupLength: 0.02

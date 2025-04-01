@@ -6,17 +6,23 @@ public class EnemyManager : MonoBehaviour
     private int defeatedEnemies;
 
     [SerializeField] private GameObject levelTransition;
+    [SerializeField] private GameObject levelReward;
+
+    private bool finished = false;
 
     void Start()
     {
         levelTransition.SetActive(false);
+        levelReward.SetActive(false);
     }
 
     void Update()
     {
-        if(defeatedEnemies == enemiesInScene)
+        if(defeatedEnemies == enemiesInScene && !finished)
         {
             levelTransition.SetActive(true);
+            levelReward.SetActive(true);
+            finished = true;
         }
     }
 
