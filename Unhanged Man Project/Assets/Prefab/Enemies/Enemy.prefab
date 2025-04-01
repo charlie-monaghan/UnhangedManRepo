@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2279019299012573302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5852710404891477302}
+  m_Layer: 0
+  m_Name: Wall Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5852710404891477302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279019299012573302}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.90999985, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6857007703727955676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4215924532541357096
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
+  damageSound: {fileID: 0}
 --- !u!50 &5039333755736985608
 Rigidbody2D:
   serializedVersion: 5
@@ -168,6 +200,14 @@ MonoBehaviour:
   Attack: {fileID: 7237558217495696395}
   enemyAttackLength: 1
   attackCooldownTime: 5
+  bodyIsWeapon: 0
+  groundedEnemy: 0
+  jumpForce: 6
+  wallCheck: {fileID: 5852710404891477302}
+  wallCheckRadius: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   speed: 400
   nextWayPointDistance: 3
   enemyGFX: {fileID: 6857007703727955676}
@@ -311,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  knockbackForce: 0
 --- !u!1 &7719899502429946293
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +382,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5852710404891477302}
   - {fileID: 1919609519007190185}
   m_Father: {fileID: 9205707365844840874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
