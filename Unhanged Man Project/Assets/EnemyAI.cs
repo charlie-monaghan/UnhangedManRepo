@@ -13,7 +13,6 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackCooldownTime;
     bool coolDownActive = false;
     [SerializeField] private bool bodyIsWeapon = false;
-    [SerializeField] private bool groundedEnemy = false;
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -73,12 +72,12 @@ public class EnemyAI : MonoBehaviour
             anim.SetBool("Chasing", true);
         else
             anim.SetBool("Chasing", false);
-
+        /*
         if (!groundedEnemy)
         {
             rb.MoveRotation(rb.rotation - 0.5f * speed * Time.fixedDeltaTime);
         }
-
+        */
         if (reachedEndOfPath)
         {
             if (!coolDownActive && !bodyIsWeapon)
@@ -106,11 +105,11 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (force.x >= 0.01f && !isAttacking && groundedEnemy)
+        if (force.x >= 0.01f && !isAttacking)// && groundedEnemy)
         {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
-        else if (force.x <= -0.01f && !isAttacking && groundedEnemy)
+        else if (force.x <= -0.01f && !isAttacking)// && groundedEnemy)
         {
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
@@ -119,6 +118,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (isAttacking) { yield break; }
         isAttacking = true;
+        anim.SetTrigger("Attack");
         Attack.SetActive(true); // turn damage field on
         yield return new WaitForSeconds(enemyAttackLength); // wait for attack to finish
         Attack.SetActive(false); // turn damage field off
