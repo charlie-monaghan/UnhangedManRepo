@@ -20,6 +20,7 @@ public class ItemPickup : MonoBehaviour
         {
             givenItem.AssignOwner(collision.gameObject);
             givenItem.ActivateItem();
+            Destroy(gameObject);
         }
     }
 }

@@ -12,6 +12,10 @@ public class Item : ScriptableObject
 
     public event Action<string> onItemPickup;
 
+    private void OnEnable()
+    {
+        stackAmount = 0;
+    }
 
     public string GetItemName()
     {
@@ -21,6 +25,11 @@ public class Item : ScriptableObject
     public Sprite GetSprite()
     {
         return sprite;
+    }
+
+    public GameObject GetPlayer()
+    {
+        return playerRef;
     }
 
     public void AssignOwner(GameObject GO)
@@ -38,6 +47,7 @@ public class Item : ScriptableObject
         else
         {
             stackAmount++;
+            Debug.Log("" + stackAmount);
             GameObject itemObject = Instantiate(itemPrefab, playerRef.transform);
         }
     }

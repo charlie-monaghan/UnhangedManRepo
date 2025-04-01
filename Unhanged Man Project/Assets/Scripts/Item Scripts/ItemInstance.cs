@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemInstance : MonoBehaviour
 {
-    [SerializeField] Item itemSO;
+    [SerializeField] protected Item itemSO;
     //public int stackAmount;
 
     void Start()
