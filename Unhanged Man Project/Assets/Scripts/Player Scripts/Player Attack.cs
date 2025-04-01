@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] public Weapon secondWeapon;
     [SerializeField] public AudioClip attackClip;
     private AudioSource audioSource;
+    private Animator anim;
 
     private Attack attackVolume;
 
@@ -24,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
         Attack.SetActive(false); // make sure the damage field is off when game loads (redundancy)
         attackVolume = Attack.GetComponent<Attack>();
         audioSource = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
 
         if(PlayerManager.instance != null )
         {
@@ -50,6 +52,14 @@ public class PlayerAttack : MonoBehaviour
             SwapWeapon();
         }
 
+        switch (currentWeapon.weaponName) {
+            case "Sword":
+                anim.SetInteger("WeaponIndex", 0);
+                break;
+            case "Axe":
+                anim.SetInteger("WeaponIndex", 1);
+                break;
+        }
     }
 
     private IEnumerator attackLogic()

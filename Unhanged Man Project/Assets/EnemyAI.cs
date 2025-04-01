@@ -5,7 +5,6 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
-
     public Transform target;
 
     [SerializeField] private GameObject Attack;
@@ -14,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackCooldownTime;
     bool coolDownActive = false;
     [SerializeField] private bool bodyIsWeapon = false;
+    [SerializeField] private bool groundedEnemy = false;
 
     public float speed = 200f;
     public float nextWayPointDistance = 3f;
@@ -28,6 +28,7 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+    Animator anim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,6 +37,7 @@ public class EnemyAI : MonoBehaviour
         {
             Attack.SetActive(false);
         }
+        anim = GetComponentInChildren<Animator>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, 0.5f);
@@ -67,9 +69,14 @@ public class EnemyAI : MonoBehaviour
         if (path == null)
             return;
 
-        if (bodyIsWeapon)
+        if (playerDetected)
+            anim.SetBool("Chasing", true);
+        else
+            anim.SetBool("Chasing", false);
+
+        if (!groundedEnemy)
         {
-            rb.MoveRotation(rb.rotation + 137f * Time.fixedDeltaTime);
+            rb.MoveRotation(rb.rotation - 0.5f * speed * Time.fixedDeltaTime);
         }
 
         if (reachedEndOfPath)
@@ -99,13 +106,13 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (force.x >= 0.01f && !isAttacking)
-        {
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else if (force.x <= -0.01f && !isAttacking)
+        if (force.x >= 0.01f && !isAttacking && groundedEnemy)
         {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else if (force.x <= -0.01f && !isAttacking && groundedEnemy)
+        {
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
     private IEnumerator AttackPlayer()
