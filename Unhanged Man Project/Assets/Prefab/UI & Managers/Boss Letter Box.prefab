@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6438629814746947594}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.8355024, y: 166.23149, z: -3189.943}
   m_LocalScale: {x: 35.443813, y: 35.443813, z: 35.443813}
   m_ConstrainProportionsScale: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -10
+  m_SortingOrder: 0
   m_Sprite: {fileID: -8351060446295812472, guid: 92ea3b95a7c1eb744a2a48d15bc2793d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,3 +102,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossLetter: {fileID: 0}
   defeatedBossPlaceholder: {fileID: 1729676528862612940, guid: c4a06153f160bd84cafbb5b45ad1944d, type: 3}
+  bossStageManager: {fileID: 0}
