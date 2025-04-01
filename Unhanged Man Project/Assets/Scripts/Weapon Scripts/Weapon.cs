@@ -7,6 +7,7 @@ public class Weapon : ScriptableObject
     public string weaponName;
     public Sprite weaponSprite;
     public int damage;
+    public int knockbackForce;
     public float startupLength;
     public float attackLength;
     public float recoveryLength;

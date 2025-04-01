@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 3;
+    [SerializeField] public int maxHealth = 3;
     [SerializeField] private int currentHealth;
     [SerializeField] private AudioClip damageSound;
     private AudioSource audioSource;
     private AudioSource persSource;
 
     public event Action onHealthChanged;
+    public event Action onPlayerDeath;
+
+    public event Action onBossEnemyDeath;
 
     void Awake()
     {
@@ -33,6 +36,11 @@ public class Health : MonoBehaviour
         {
             persSource.PlayOneShot(damageSound);
             gameObject.SetActive(false);
+            onBossEnemyDeath?.Invoke();
+        }
+        else if (currentHealth <= 0)
+        {
+            onPlayerDeath?.Invoke();
         }
     }
 
