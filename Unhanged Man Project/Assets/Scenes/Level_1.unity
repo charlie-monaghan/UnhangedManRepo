@@ -4505,6 +4505,7 @@ GameObject:
   - component: {fileID: 971259333}
   - component: {fileID: 971259332}
   - component: {fileID: 971259331}
+  - component: {fileID: 971259334}
   m_Layer: 5
   m_Name: Restart Game
   m_TagString: Untagged
@@ -4575,7 +4576,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 971259332}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 971259334}
+        m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
+        m_MethodName: DedicatedSceneChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &971259332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4614,6 +4627,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971259329}
   m_CullTransparentMesh: 1
+--- !u!114 &971259334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971259329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Main Menu
 --- !u!1001 &982942464
 PrefabInstance:
   m_ObjectHideFlags: 0
