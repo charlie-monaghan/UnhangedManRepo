@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: d096d2ac752e7ba42bb25b1b1f951de5
+guid: 9139ada1881b18f4cac04f5415dc37a0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 444702640956841479
-    second: PlayerJump_0
+      213: 2589212268415769977
+    second: R_Idle_0
   - first:
-      213: -7941400250425145444
-    second: PlayerJump_1
-  - first:
-      213: 496497603323687001
-    second: PlayerJump_2
+      213: -8376621800927932320
+    second: R_Idle_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +75,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -119,67 +116,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerJump_0
+      name: R_Idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2048
-        width: 1024
-        height: 1024
+        y: 1200
+        width: 1439
+        height: 1200
       alignment: 9
-      pivot: {x: 0.37, y: 0.32}
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf05fd9776196ef4ab6356c035620005
-      internalID: -771487607
+      spriteID: bbb24a83671197b46919468fbb63e036
+      internalID: -804362564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerJump_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1024
-        width: 1024
-        height: 1024
-      alignment: 9
-      pivot: {x: 0.37, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc9955cbea412884999016bc43868bc0
-      internalID: -1061690706
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerJump_2
+      name: R_Idle_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1024
+        width: 1439
+        height: 1200
       alignment: 9
-      pivot: {x: 0.37, y: 0.32}
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9a60496ba0302844b747f4c55e668e7
-      internalID: 593442757
+      spriteID: 4c9ee95b616a8bf428aa215b5e686824
+      internalID: -2022241155
       vertices: []
       indices: 
       edges: []
@@ -188,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f8e752c27913d964da7d71e7b8d87d29
+    spriteID: 7aaeb150545d57d49b9035a8652833b4
     internalID: 0
     vertices: []
     indices: 
@@ -198,9 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlayerJump_0: -771487607
-      PlayerJump_1: -1061690706
-      PlayerJump_2: 593442757
+      R_Idle_0: -804362564
+      R_Idle_1: -2022241155
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

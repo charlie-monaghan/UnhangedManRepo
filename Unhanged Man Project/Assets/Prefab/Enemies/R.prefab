@@ -187,10 +187,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2343201672162533951, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: m_Size.x
+      value: 8.8140545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2343201672162533951, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: m_Size.y
+      value: 11.240739
+      objectReference: {fileID: 0}
+    - target: {fileID: 2343201672162533951, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.6077814
+      objectReference: {fileID: 0}
+    - target: {fileID: 2343201672162533951, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.27138376
+      objectReference: {fileID: 0}
     - target: {fileID: 3332206882644077972, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1703259306, guid: 59e31a70b5128b743b1d127bcbedd368, type: 3}
+      objectReference: {fileID: -804362564, guid: 9139ada1881b18f4cac04f5415dc37a0, type: 3}
+    - target: {fileID: 3654004416833820795, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.39
+      objectReference: {fileID: 0}
     - target: {fileID: 4420260191896192405, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: m_Size.x
       value: 8.785268
@@ -224,6 +244,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: wallCheckRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: enemyAttackLength
       value: 0.333
       objectReference: {fileID: 0}
@@ -243,7 +267,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c6594651e39536e4aaef15e70831889a, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4420260191896192405, guid: aac6e537599e20940916c52270667d2d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4369719379832521617, guid: aac6e537599e20940916c52270667d2d, type: 3}
