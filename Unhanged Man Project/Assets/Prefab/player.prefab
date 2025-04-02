@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5241521776527423981}
   m_Layer: 0
   m_Name: Player Attack
-  m_TagString: Untagged
+  m_TagString: Player Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: -1
+  knockbackForce: 0
 --- !u!1 &956642613035557751
 GameObject:
   m_ObjectHideFlags: 0
