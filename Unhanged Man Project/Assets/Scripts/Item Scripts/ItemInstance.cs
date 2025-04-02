@@ -7,7 +7,13 @@ public class ItemInstance : MonoBehaviour
 
     void Start()
     {
+        itemSO.onItemPickup += UpdateItem;
         ItemEffect();
+    }
+
+    private void OnDestroy()
+    {
+        itemSO.onItemPickup -= UpdateItem;
     }
 
     void Update()

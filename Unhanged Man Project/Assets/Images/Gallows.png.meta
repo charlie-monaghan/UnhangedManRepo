@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gallows_0: 3923303563060752191
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
