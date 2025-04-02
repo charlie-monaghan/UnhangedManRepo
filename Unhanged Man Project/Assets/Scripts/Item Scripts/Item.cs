@@ -42,6 +42,7 @@ public class Item : ScriptableObject
         if(stackAmount > 0)
         {
             stackAmount++;
+            Debug.Log("stackamount = " + stackAmount);
             onItemPickup?.Invoke(itemName);
         }
         else

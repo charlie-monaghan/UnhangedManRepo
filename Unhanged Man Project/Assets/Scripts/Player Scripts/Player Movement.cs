@@ -6,8 +6,8 @@ using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] public float speed;
+    [SerializeField] public float jumpForce;
     [SerializeField] private float rollSpeed;
     [SerializeField] private float coolDownTime;
     [SerializeField] private bool isInvincible;
