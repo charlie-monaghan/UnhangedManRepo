@@ -30,13 +30,13 @@ public class DrawWeapons : MonoBehaviour
     {
         if (playerAttack.currentWeapon != null)
         {
-            currentSprite.sprite = playerAttack.currentWeapon.weaponSprite;
+            currentSprite.sprite = playerAttack.currentWeapon.GetSprite();
             currentSprite.enabled = true;
         }
 
         if (playerAttack.secondWeapon != null)
         {
-            secondSprite.sprite = playerAttack.secondWeapon.weaponSprite;
+            secondSprite.sprite = playerAttack.secondWeapon.GetSprite();
             secondSprite.enabled = true;
         }
     }

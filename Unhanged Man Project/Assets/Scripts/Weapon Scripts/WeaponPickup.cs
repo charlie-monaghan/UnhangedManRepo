@@ -58,7 +58,7 @@ public class WeaponPickup : MonoBehaviour
         droppedWeaponPickupScript.SetWeapon(playerRef.currentWeapon); // set the pickup's givenWeapon to the one they dropped
 
         SpriteRenderer droppedWeaponSpriteRenderer = droppedWeapon.GetComponent<SpriteRenderer>(); // get the players dropped weapon pickup's sprite renderer
-        droppedWeaponSpriteRenderer.sprite = playerRef.currentWeapon.weaponSprite; // set the pickup's sprite to the dropped weapons sprite
+        droppedWeaponSpriteRenderer.sprite = playerRef.currentWeapon.GetSprite(); // set the pickup's sprite to the dropped weapons sprite
     }
 
     private void SetWeapon(Weapon newWeapon) // only really used in DropCurrentWeapon

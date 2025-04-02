@@ -85,12 +85,12 @@ public class PlayerAttack : MonoBehaviour
         if(secondWeapon == null)
         {
             secondWeapon = otherWeapon;
-            Debug.Log("picked up new weapon: " + otherWeapon.weaponName);
+            Debug.Log("picked up new weapon: " + otherWeapon.GetItemName());
         }
         else if(secondWeapon != null)
         {
             currentWeapon = otherWeapon;
-            Debug.Log("swapped current weapon to " + currentWeapon.weaponName);
+            Debug.Log("swapped current weapon to " + currentWeapon.GetItemName());
         }
 
         PlayerManager.instance.SavePlayerData(PlayerManager.instance.playerHealth, currentWeapon, secondWeapon);
@@ -104,7 +104,7 @@ public class PlayerAttack : MonoBehaviour
             Weapon swap = secondWeapon;
             secondWeapon = currentWeapon;
             currentWeapon = swap;
-            Debug.Log("Swapped weapon to: " + currentWeapon.weaponName);
+            Debug.Log("Swapped weapon to: " + currentWeapon.GetItemName());
         }
         else
         {
