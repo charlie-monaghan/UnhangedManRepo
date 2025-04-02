@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Jump Up
   m_EditorClassIdentifier: 
   itemName: Jump Up
-  sprite: {fileID: 6231118548758756780, guid: d11e38439b047a140a8b17a64e48cc9f, type: 3}
+  sprite: {fileID: -7460884117374449352, guid: b789cf861892dbe429ff1d230e0cb01a, type: 3}
   itemPrefab: {fileID: 9003101841927842343, guid: ddab7b7df4017bc479b1195d674998d7, type: 3}
-  stackAmount: 3
+  stackAmount: 0
