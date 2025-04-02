@@ -5,7 +5,6 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
-
     public Transform target;
 
     [SerializeField] private GameObject Attack;
@@ -39,6 +38,7 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+    Animator anim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,6 +48,7 @@ public class EnemyAI : MonoBehaviour
         {
             Attack.SetActive(false);
         }
+        anim = GetComponentInChildren<Animator>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         if (groundedEnemy)
@@ -82,11 +83,17 @@ public class EnemyAI : MonoBehaviour
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
         if (path == null)
             return;
-        if (bodyIsWeapon)
-        {
-            rb.MoveRotation(rb.rotation + 137f * Time.fixedDeltaTime);
-        }
 
+        if (playerDetected)
+            anim.SetBool("Chasing", true);
+        else
+            anim.SetBool("Chasing", false);
+        
+        if (!groundedEnemy)
+        {
+            rb.MoveRotation(rb.rotation - 0.5f * speed * Time.fixedDeltaTime);
+        }
+        
         if (reachedEndOfPath)
         {
             if (groundedEnemy)
@@ -123,19 +130,20 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (force.x >= 0.01f && !isAttacking)
-        {
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else if (force.x <= -0.01f && !isAttacking)
+        if (force.x >= 0.01f && !isAttacking)// && groundedEnemy)
         {
             enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else if (force.x <= -0.01f && !isAttacking)// && groundedEnemy)
+        {
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
     private IEnumerator AttackPlayer()
     {
         if (isAttacking) { yield break; }
         isAttacking = true;
+        anim.SetTrigger("Attack");
         Attack.SetActive(true); // turn damage field on
         yield return new WaitForSeconds(enemyAttackLength); // wait for attack to finish
         Attack.SetActive(false); // turn damage field off
