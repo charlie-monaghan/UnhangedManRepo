@@ -150,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
                 state = State.Rolling;
                 rollDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0).normalized;
                 isInvincible = true;
+                anim.SetTrigger("Roll");
                 StartCoroutine(CoolDown());
             }
             break;
