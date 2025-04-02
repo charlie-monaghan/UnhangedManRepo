@@ -88,13 +88,12 @@ public class EnemyAI : MonoBehaviour
             anim.SetBool("Chasing", true);
         else
             anim.SetBool("Chasing", false);
-        /*
+        
         if (!groundedEnemy)
-        if (bodyIsWeapon)
         {
             rb.MoveRotation(rb.rotation - 0.5f * speed * Time.fixedDeltaTime);
         }
-        */
+        
         if (reachedEndOfPath)
         {
             if (groundedEnemy)

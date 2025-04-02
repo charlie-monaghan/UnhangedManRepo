@@ -41,6 +41,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: Attack
       value: 
       objectReference: {fileID: 3648137593284817490}
@@ -52,9 +56,17 @@ PrefabInstance:
       propertyPath: attackCooldownTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: nextWayPointDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4215924532541357096, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_Name
-      value: O Variant
+      value: O
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215924532541357096, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5598748615267856601, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_Sprite
@@ -206,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  knockbackForce: 0
 --- !u!58 &4186955901620127343
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -240,7 +253,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.27442646, y: 0}
   m_Radius: 5.7628126
 --- !u!1 &7134730383061110735 stripped
 GameObject:
@@ -281,8 +294,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.36, y: 0.12}
-  m_Radius: 5.55
+  m_Offset: {x: -0.21629524, y: 0.119999886}
+  m_Radius: 4.9737053
 --- !u!82 &4014810045535135997
 AudioSource:
   m_ObjectHideFlags: 0
@@ -295,7 +308,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
