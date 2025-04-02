@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95837b89f4bdab5439fa6e26270564d5, type: 3}
-  m_Name: Speed Up
+  m_Name: Jump Up
   m_EditorClassIdentifier: 
-  itemName: Speed Up
+  itemName: Jump Up
   sprite: {fileID: 6231118548758756780, guid: d11e38439b047a140a8b17a64e48cc9f, type: 3}
-  itemPrefab: {fileID: 9003101841927842343, guid: cf5bd8adb6309c941932f8803eeade03, type: 3}
-  stackAmount: 3
+  itemPrefab: {fileID: 0}
+  stackAmount: 0
