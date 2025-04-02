@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
 public class Item : ScriptableObject
 {
-    [SerializeField] string itemName;
+    [SerializeField] public string itemName;
     [SerializeField] Sprite sprite;
     [SerializeField] GameObject itemPrefab;
     GameObject playerRef;

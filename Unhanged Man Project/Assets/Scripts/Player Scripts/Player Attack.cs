@@ -48,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
             SwapWeapon();
         }
 
-        switch (currentWeapon.weaponName) {
+        switch (currentWeapon.itemName) {
             case "Sword":
                 anim.SetInteger("WeaponIndex", 0);
                 break;
