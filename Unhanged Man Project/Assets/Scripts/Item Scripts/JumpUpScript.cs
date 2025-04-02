@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealthUpScript : ItemInstance
+public class JumpUpScript : ItemInstance
 {
     private void OnEnable()
     {
@@ -23,7 +23,8 @@ public class HealthUpScript : ItemInstance
     public override void ItemEffect()
     {
         base.ItemEffect();
-        Health health = itemSO.GetPlayer().GetComponent<Health>();
-        health.maxHealth = 10 + (1 * itemSO.stackAmount);
+        Debug.Log("" + itemSO.stackAmount);
+        PlayerMovement playerMovement = itemSO.GetPlayer().GetComponent<PlayerMovement>();
+        playerMovement.jumpForce = 12f + (0.5f * itemSO.stackAmount);
     }
 }

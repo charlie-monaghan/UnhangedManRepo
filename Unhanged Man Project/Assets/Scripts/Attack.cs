@@ -12,7 +12,7 @@ public class Attack : MonoBehaviour
         {
             otherHealth.DamageHealth(damage); // dealing damage
 
-            if (gameObject.CompareTag("Player"))
+            if (gameObject.CompareTag("Player Attack"))
             {
                 Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
                 if (enemyRb != null)
