@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Health Up
   m_EditorClassIdentifier: 
   itemName: Health Up
-  sprite: {fileID: 6231118548758756780, guid: d11e38439b047a140a8b17a64e48cc9f, type: 3}
+  sprite: {fileID: -7493704107873504778, guid: 3a6b4ffe9c0e5504cadb0ec61f970b4f, type: 3}
   itemPrefab: {fileID: 454068064050626127, guid: 55068ef2a43486041891913d75239226, type: 3}
   stackAmount: 0
