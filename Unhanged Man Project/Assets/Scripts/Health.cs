@@ -6,6 +6,8 @@ public class Health : MonoBehaviour
     [SerializeField] public int maxHealth = 3;
     [SerializeField] private int currentHealth;
     [SerializeField] private AudioClip damageSound;
+    [SerializeField] public GameObject hitParticles;
+    [SerializeField] public GameObject deathParticles;
     private AudioSource audioSource;
     private AudioSource persSource;
 
@@ -34,6 +36,7 @@ public class Health : MonoBehaviour
         // if objects health is 0 and its not the player, kill it
         if (currentHealth <= 0 && tag != "Player")
         {
+            Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
             persSource.PlayOneShot(damageSound);
             gameObject.SetActive(false);
             onBossEnemyDeath?.Invoke();
@@ -67,6 +70,8 @@ public class Health : MonoBehaviour
         {
             PlayerManager.instance.playerHealth = currentHealth;
         }
+
+        Instantiate(hitParticles, gameObject.transform.position, gameObject.transform.rotation);
 
         onHealthChanged?.Invoke();
     }

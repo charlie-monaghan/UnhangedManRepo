@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 2.52
       objectReference: {fileID: 0}
+    - target: {fileID: 4354080865419089325, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 8296164203542062588, guid: ac1227461c9f4fc43911c767ea924c8f, type: 3}
     - target: {fileID: 5537903274561024080, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -1,0 +1,45 @@
+Enemy types
+
+"Waddlers" are grouned and only
+approach the player to deal contact damage.
+
+"Swingers" are like waddlers, but they have actual
+attack animations and swing at the player.
+
+"Turrets" don't shoot projectiles, but they have
+don't move and have long range damage fields
+when they attack, kinda like a turret.
+
+"Floaters" fly towards the player and spin around
+
+And some enemies just do their own thing
+
+
+Key:
+
+A- Waddler
+B- 
+C- 
+D- 
+E- Waddler
+F- 
+G- 
+H- Turret (attacks upwards)
+I- 
+J- 
+K- 
+L- Swinger
+M- 
+N- 
+O- Floater
+P- 
+Q- 
+R- Swinger
+S- Swinger
+T- Turret (attacks downards)
+U- 
+V- 
+W- 
+X- Floater (MINIBOSS ONLY for Axe gallows)
+Y- 
+Z- 
