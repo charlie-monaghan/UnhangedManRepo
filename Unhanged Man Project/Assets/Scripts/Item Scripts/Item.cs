@@ -6,7 +6,7 @@ public class Item : ScriptableObject
 {
     [SerializeField] public string itemName;
     [SerializeField] Sprite sprite;
-    [SerializeField] GameObject itemPrefab;
+    [SerializeField] public GameObject itemPrefab;
     GameObject playerRef;
     public int stackAmount;
 

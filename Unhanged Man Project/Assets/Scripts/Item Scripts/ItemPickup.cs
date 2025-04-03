@@ -20,6 +20,12 @@ public class ItemPickup : MonoBehaviour
         {
             givenItem.AssignOwner(collision.gameObject);
             givenItem.ActivateItem();
+
+            if (!PlayerManager.instance.playerItems.Contains(givenItem))
+            {
+                PlayerManager.instance.playerItems.Add(givenItem);
+            }
+
             Destroy(gameObject);
         }
     }
