@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerManager : MonoBehaviour
     public int playerHealth;
     public Weapon currentWeapon;
     public Weapon secondWeapon;
+
+    public List<Item> playerItems = new List<Item>();
 
     private void Awake()
     {
@@ -38,5 +41,14 @@ public class PlayerManager : MonoBehaviour
         }
         currentWeapon = null;
         secondWeapon = null;
+
+        playerItems.Clear();
     }
+
+    public int GetItemStack(string itemName)
+    {
+        Item item = playerItems.Find(i => i.itemName == itemName);
+        return item != null ? item.stackAmount : 0;
+    }
+
 }

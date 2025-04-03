@@ -7,6 +7,7 @@ public class ItemInstance : MonoBehaviour
 
     void Start()
     {
+        itemSO.stackAmount = PlayerManager.instance.GetItemStack(itemSO.itemName);
         itemSO.onItemPickup += UpdateItem;
         ItemEffect();
     }
