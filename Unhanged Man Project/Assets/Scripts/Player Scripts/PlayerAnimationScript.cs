@@ -14,12 +14,13 @@ public class PlayerAnimationScript : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             anim.SetTrigger("AttackInput");
         }
-
-        else if (isMovingX)
+        */
+        if (isMovingX)
         {
             frameCounter = 0;
             anim.SetBool("IsMovingX", true);

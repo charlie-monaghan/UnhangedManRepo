@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sword
   sprite: {fileID: 21300000, guid: 02a56a0757956e54799c6eb3106f7e54, type: 3}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 3123757095376014989, guid: 5eaf78f89ce677e4fa916704a609aea9, type: 3}
   stackAmount: 0
   damage: 4
   knockbackForce: 8
-  startupLength: 0.1
-  attackLength: 0.35
-  recoveryLength: 0.03
+  startupLength: 0.167
+  attackLength: 0.25
+  recoveryLength: 0.05

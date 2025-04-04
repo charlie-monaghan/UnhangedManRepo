@@ -55,6 +55,12 @@ public class PlayerAttack : MonoBehaviour
             case "Axe":
                 anim.SetInteger("WeaponIndex", 1);
                 break;
+            case "Hammer":
+                anim.SetInteger("WeaponIndex", 2);
+                break;
+            case "Katana":
+                anim.SetInteger("WeaponIndex", 3);
+                break;
         }
     }
 
@@ -62,9 +68,12 @@ public class PlayerAttack : MonoBehaviour
     {
         if (isAttacking) yield break; // if attack is already happening, break
 
-        audioSource.PlayOneShot(attackClip);
+        anim.SetTrigger("AttackInput");
         isAttacking = true; // player is attacking
-        yield return new WaitForSeconds(currentWeapon.startupLength); // wait for the start up before attack can hit
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(currentWeapon.startupLength - 0.1f); // wait for the start up before attack can hit
+        audioSource.PlayOneShot(attackClip);
+        yield return new WaitForSeconds(0.1f);
         PassDamageThrough(); // make sure attack volume deals correct damage
 
 
