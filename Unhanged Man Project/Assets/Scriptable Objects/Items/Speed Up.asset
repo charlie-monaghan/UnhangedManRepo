@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Speed Up
   m_EditorClassIdentifier: 
   itemName: Speed Up
-  sprite: {fileID: 6231118548758756780, guid: d11e38439b047a140a8b17a64e48cc9f, type: 3}
+  sprite: {fileID: 1379758376850502678, guid: 6bcf00d7095cb8a4f9a83b4eb05c53ae, type: 3}
   itemPrefab: {fileID: 9003101841927842343, guid: cf5bd8adb6309c941932f8803eeade03, type: 3}
-  stackAmount: 3
+  stackAmount: 0

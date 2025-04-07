@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private bool canJump = false;
     [SerializeField] private float jumpForce;
     private bool isJumping = false;
+    [SerializeField] private bool isFlipped = false;
 
     //Wall detection
     [Header("Wall Detection")]
@@ -83,11 +84,6 @@ public class EnemyAI : MonoBehaviour
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
         if (path == null)
             return;
-
-        if (playerDetected)
-            anim.SetBool("Chasing", true);
-        else
-            anim.SetBool("Chasing", false);
         
         if (!groundedEnemy)
         {
@@ -108,11 +104,12 @@ public class EnemyAI : MonoBehaviour
         }
         if (currentWaypoint >= path.vectorPath.Count)
         {
+            anim.SetBool("Chasing", false);
             reachedEndOfPath = true;
             return;
         } else
         {
-            reachedEndOfPath= false;
+            reachedEndOfPath = false;
         }
         //Jump for grounded enemy
         if (isTouchingWall && !isJumping && canJump)
@@ -132,12 +129,23 @@ public class EnemyAI : MonoBehaviour
 
         if (force.x >= 0.01f && !isAttacking)// && groundedEnemy)
         {
-            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            if (isFlipped)
+                enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            else
+                enemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
         else if (force.x <= -0.01f && !isAttacking)// && groundedEnemy)
         {
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            if (isFlipped)
+                enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            else
+                enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
+
+        if (rb.linearVelocityX != 0)
+            anim.SetBool("Chasing", true);
+        else
+            anim.SetBool("Chasing", false);
     }
     private IEnumerator AttackPlayer()
     {
