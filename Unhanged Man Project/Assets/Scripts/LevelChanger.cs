@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,20 +19,19 @@ public class LevelChanger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             RandomSceneName = randomLevels.ReturnNextLevel();
-            DedicatedSceneChange();
+            StartCoroutine(LoadNextLevel());
         }
     }
 
-    public void DedicatedSceneChange()
+    private IEnumerator LoadNextLevel()
     {
-        if(RandomSceneName != null)
-        {
-            SceneManager.LoadScene(RandomSceneName);
-        }
-        else
-        {
-            SceneManager.LoadScene(DedicatedSceneName);
-        }
+        yield return new WaitForSeconds(0.1f);
+        DedicatedSceneChange(RandomSceneName);
+    }
+
+    public void DedicatedSceneChange(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
     }
 
     public void quitButton()
@@ -44,7 +44,7 @@ public class LevelChanger : MonoBehaviour
         if (PlayerManager.instance != null)
         {
             PlayerManager.instance.ResetPlayerData();
-            DedicatedSceneChange();
+            DedicatedSceneChange(DedicatedSceneName);
         }
     }
 }

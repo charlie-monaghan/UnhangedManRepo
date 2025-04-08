@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5774860928737236280}
   - component: {fileID: 7846027730165239731}
+  - component: {fileID: 8970321869300272915}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -44,3 +45,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4d8d0f1e5f3554588187b069d9c565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 0
+  currentWeapon: {fileID: 0}
+  secondWeapon: {fileID: 0}
+  playerItems: []
+--- !u!114 &8970321869300272915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677879895360728050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7261c3ee488524cb478c51c5f8fe9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularLevelNames:
+  - Level1
+  - Level2
+  - Level3
+  - Level4
+  - Level5
+  - Level6
+  bossLevelNames:
+  - BossLevel1
+  - BossLevel2
+  - BossLevel3
+  nextLevelName: 

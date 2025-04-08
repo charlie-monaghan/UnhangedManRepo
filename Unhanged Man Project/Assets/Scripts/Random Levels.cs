@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RandomLevels : MonoBehaviour
 {
+    public static RandomLevels instance { get; private set; }
+
     [SerializeField] string[] regularLevelNames;
     [SerializeField] string[] bossLevelNames;
     private List<string> recentLevels = new List<string>();
@@ -10,14 +13,34 @@ public class RandomLevels : MonoBehaviour
     private int levelsBeat = 0;
     public string nextLevelName;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        string firstLevel = SceneManager.GetActiveScene().name;
+        TrackRecentLevels(firstLevel);
+        levelsBeat++;
+    }
+
     public string ReturnNextLevel()
     {
         levelsBeat++;
-        if(levelsBeat < 3)
+        if (levelsBeat < 4)
         {
             ChooseLevel(regularLevelNames);
         }
-        else if(levelsBeat == 3)
+        else if(levelsBeat == 4)
         {
             ChooseLevel(bossLevelNames);
             levelsBeat = 0;
@@ -33,9 +56,13 @@ public class RandomLevels : MonoBehaviour
             int nextLevelNum = Random.Range(0, levelArray.Length);
             nextLevelName = levelArray[nextLevelNum];
             attempts++;
-        } while (recentLevels.Contains(nextLevelName) && attempts < 10);
+        } while (recentLevels.Contains(nextLevelName) && attempts < 1000);
 
-        TrackRecentLevels(nextLevelName);
+        if(levelArray == regularLevelNames)
+        {
+            TrackRecentLevels(nextLevelName);
+        }
+        Debug.Log("recent levels are: " + recentLevels[0] + " and " + recentLevels[1]);
     }
 
     private void TrackRecentLevels(string level)
