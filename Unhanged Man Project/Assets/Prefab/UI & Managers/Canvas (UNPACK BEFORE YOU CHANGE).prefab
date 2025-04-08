@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 33ecca9a3f106f84584ebe7527da00f6, type: 2}
   m_sharedMaterial: {fileID: -6812069463759341142, guid: 33ecca9a3f106f84584ebe7527da00f6, type: 2}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -6.046379, y: 0, z: -5.182686, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1059,7 +1059,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2445588316430681436}
         m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
-        m_MethodName: DedicatedSceneChange
+        m_MethodName: StartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1081,7 +1081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Main Menu
+  DedicatedSceneName: 
+  randomLevels: {fileID: 0}
 --- !u!1 &4725554454557838909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1275,7 @@ GameObject:
   - component: {fileID: 1359829562488445648}
   - component: {fileID: 2672974384427335413}
   - component: {fileID: 1087996272077502897}
-  - component: {fileID: 3881940147916033639}
+  - component: {fileID: 5771640284898439788}
   m_Layer: 5
   m_Name: Quit Game
   m_TagString: Untagged
@@ -1384,19 +1385,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3881940147916033639}
-        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
-        m_MethodName: Quit
-        m_Mode: 1
+      - m_Target: {fileID: 5771640284898439788}
+        m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
+        m_MethodName: DedicatedSceneChange
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Main Menu
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3881940147916033639
+--- !u!114 &5771640284898439788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1405,9 +1406,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5091605680003852602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a56d84415f4c30b4a8ac6d7790f14a08, type: 3}
+  m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DedicatedSceneName: 
+  randomLevels: {fileID: 0}
 --- !u!1 &5279668070772851276
 GameObject:
   m_ObjectHideFlags: 0
