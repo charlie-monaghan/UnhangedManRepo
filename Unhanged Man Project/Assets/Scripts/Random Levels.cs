@@ -1,18 +1,72 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RandomLevels : MonoBehaviour
 {
+    public static RandomLevels instance { get; private set; }
+
     [SerializeField] string[] regularLevelNames;
     [SerializeField] string[] bossLevelNames;
+    private static List<string> recentLevels = new List<string>();
 
-    void Start()
+    public static bool levelChosen = false;
+    private static int levelsBeat = 0;
+    public static string nextLevelName;
+
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public string ReturnNextLevel()
     {
-        
+        levelsBeat++;
+        Debug.Log("Levels beat = " + levelsBeat);
+        if (levelsBeat >= 4)
+        {
+            ChooseLevel(bossLevelNames);
+            levelsBeat = 0;
+        }
+        else
+        {
+            ChooseLevel(regularLevelNames);
+        }
+        return nextLevelName;
+    }
+
+    private void ChooseLevel(string[] levelArray)
+    {
+        int attempts = 0;
+        do
+        {
+            int nextLevelNum = Random.Range(0, levelArray.Length);
+            nextLevelName = levelArray[nextLevelNum];
+            attempts++;
+        } while (recentLevels.Contains(nextLevelName) && attempts < 1000);
+
+        if(levelArray == regularLevelNames)
+        {
+            TrackRecentLevels(nextLevelName);
+        }
+        //Debug.Log("recent levels are: " + recentLevels[0] + " and " + recentLevels[1]);
+    }
+
+    private void TrackRecentLevels(string level)
+    {
+        recentLevels.Add(level);
+        if(recentLevels.Count > 2)
+        {
+            recentLevels.RemoveAt(0);
+        }
     }
 }
