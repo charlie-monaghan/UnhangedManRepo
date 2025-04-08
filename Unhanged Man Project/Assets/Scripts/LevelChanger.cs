@@ -18,14 +18,19 @@ public class LevelChanger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            RandomSceneName = randomLevels.ReturnNextLevel();
-            StartCoroutine(LoadNextLevel());
+            GetNextLevel();
         }
+    }
+
+    private void GetNextLevel()
+    {
+        RandomSceneName = randomLevels.ReturnNextLevel();
+        StartCoroutine(LoadNextLevel());
     }
 
     private IEnumerator LoadNextLevel()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         DedicatedSceneChange(RandomSceneName);
     }
 
@@ -44,7 +49,7 @@ public class LevelChanger : MonoBehaviour
         if (PlayerManager.instance != null)
         {
             PlayerManager.instance.ResetPlayerData();
-            DedicatedSceneChange(DedicatedSceneName);
+            GetNextLevel();
         }
     }
 }

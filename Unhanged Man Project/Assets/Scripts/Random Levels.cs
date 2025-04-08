@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class RandomLevels : MonoBehaviour
     [SerializeField] string[] bossLevelNames;
     private List<string> recentLevels = new List<string>();
 
+    public bool levelChosen = false;
     private int levelsBeat = 0;
     public string nextLevelName;
 
@@ -26,24 +28,31 @@ public class RandomLevels : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void ResetLevelFlag()
     {
-        string firstLevel = SceneManager.GetActiveScene().name;
-        TrackRecentLevels(firstLevel);
-        levelsBeat++;
+        levelChosen = false;
     }
 
     public string ReturnNextLevel()
     {
+        //if (levelChosen)
+        //{
+        //    Debug.LogWarning("ReturnNextLevel called again before reset!");
+        //    return nextLevelName;
+        //}
+
+        //levelChosen = true;
+
         levelsBeat++;
-        if (levelsBeat < 4)
-        {
-            ChooseLevel(regularLevelNames);
-        }
-        else if(levelsBeat == 4)
+        Debug.Log("Levels beat = " + levelsBeat);
+        if (levelsBeat >= 3)
         {
             ChooseLevel(bossLevelNames);
             levelsBeat = 0;
+        }
+        else
+        {
+            ChooseLevel(regularLevelNames);
         }
         return nextLevelName;
     }
@@ -62,7 +71,7 @@ public class RandomLevels : MonoBehaviour
         {
             TrackRecentLevels(nextLevelName);
         }
-        Debug.Log("recent levels are: " + recentLevels[0] + " and " + recentLevels[1]);
+        //Debug.Log("recent levels are: " + recentLevels[0] + " and " + recentLevels[1]);
     }
 
     private void TrackRecentLevels(string level)
