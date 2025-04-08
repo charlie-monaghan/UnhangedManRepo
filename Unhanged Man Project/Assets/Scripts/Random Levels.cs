@@ -9,11 +9,11 @@ public class RandomLevels : MonoBehaviour
 
     [SerializeField] string[] regularLevelNames;
     [SerializeField] string[] bossLevelNames;
-    private List<string> recentLevels = new List<string>();
+    private static List<string> recentLevels = new List<string>();
 
-    public bool levelChosen = false;
-    private int levelsBeat = 0;
-    public string nextLevelName;
+    public static bool levelChosen = false;
+    private static int levelsBeat = 0;
+    public static string nextLevelName;
 
     private void Awake()
     {
@@ -28,24 +28,11 @@ public class RandomLevels : MonoBehaviour
         }
     }
 
-    public void ResetLevelFlag()
-    {
-        levelChosen = false;
-    }
-
     public string ReturnNextLevel()
     {
-        //if (levelChosen)
-        //{
-        //    Debug.LogWarning("ReturnNextLevel called again before reset!");
-        //    return nextLevelName;
-        //}
-
-        //levelChosen = true;
-
         levelsBeat++;
         Debug.Log("Levels beat = " + levelsBeat);
-        if (levelsBeat >= 3)
+        if (levelsBeat >= 4)
         {
             ChooseLevel(bossLevelNames);
             levelsBeat = 0;
