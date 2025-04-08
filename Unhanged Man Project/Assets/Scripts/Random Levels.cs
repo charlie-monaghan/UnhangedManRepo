@@ -10,6 +10,7 @@ public class RandomLevels : MonoBehaviour
     [SerializeField] string[] regularLevelNames;
     [SerializeField] string[] bossLevelNames;
     private static List<string> recentLevels = new List<string>();
+    private static List<string> recentBossLevels = new List<string>();
 
     public static bool levelChosen = false;
     private static int levelsBeat = 0;
@@ -52,11 +53,15 @@ public class RandomLevels : MonoBehaviour
             int nextLevelNum = Random.Range(0, levelArray.Length);
             nextLevelName = levelArray[nextLevelNum];
             attempts++;
-        } while (recentLevels.Contains(nextLevelName) && attempts < 1000);
+        } while (recentBossLevels.Contains(nextLevelName) || recentLevels.Contains(nextLevelName) && attempts < 1000);
 
         if(levelArray == regularLevelNames)
         {
             TrackRecentLevels(nextLevelName);
+        }
+        else if (levelArray == bossLevelNames)
+        {
+            TrackRecentBossLevels(nextLevelName);
         }
         //Debug.Log("recent levels are: " + recentLevels[0] + " and " + recentLevels[1]);
     }
@@ -67,6 +72,14 @@ public class RandomLevels : MonoBehaviour
         if(recentLevels.Count > 2)
         {
             recentLevels.RemoveAt(0);
+        }
+    }
+    private void TrackRecentBossLevels(string level)
+    {
+        recentBossLevels.Add(level);
+        if (recentBossLevels.Count > 2)
+        {
+            recentBossLevels.RemoveAt(0);
         }
     }
 }
