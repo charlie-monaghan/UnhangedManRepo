@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     public int stackAmount;
 
     public event Action<string> onItemPickup;
+    public static event Action onUpdateItemCount;
 
     private void OnEnable()
     {
@@ -39,17 +40,39 @@ public class Item : ScriptableObject
 
     public void ActivateItem()
     {
-        if(stackAmount > 0)
+        //experimental (thank you GPT </3)
+        stackAmount++;
+
+        PlayerManager manager = playerRef.GetComponent<PlayerManager>();
+        if(manager != null && !manager.playerItems.Contains(this))
         {
-            stackAmount++;
-            Debug.Log("stackamount = " + stackAmount);
-            onItemPickup?.Invoke(itemName);
+            manager.playerItems.Add(this);
         }
-        else
+
+        onUpdateItemCount?.Invoke();
+        Debug.Log("Stack Amount = " + stackAmount);
+
+        if (stackAmount == 1)
         {
-            stackAmount++;
-            Debug.Log("" + stackAmount);
             GameObject itemObject = Instantiate(itemPrefab, playerRef.transform);
         }
+
+        onItemPickup?.Invoke(itemName);
+
+        //old
+        //if(stackAmount > 0)
+        //{
+        //    stackAmount++;
+        //    onUpdateItemCount?.Invoke();
+        //    Debug.Log("stackamount = " + stackAmount);
+        //    onItemPickup?.Invoke(itemName);
+        //}
+        //else
+        //{
+        //    stackAmount++;
+        //    onUpdateItemCount?.Invoke();
+        //    Debug.Log("" + stackAmount);
+        //    GameObject itemObject = Instantiate(itemPrefab, playerRef.transform);
+        //}
     }
 }
