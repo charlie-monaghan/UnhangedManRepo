@@ -388,7 +388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Credits
+  DedicatedSceneName: 
+  randomLevels: {fileID: 0}
 --- !u!114 &437886349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,7 +1262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Level_1
+  DedicatedSceneName: Level1
+  randomLevels: {fileID: 0}
 --- !u!114 &956704507
 MonoBehaviour:
   m_ObjectHideFlags: 0
