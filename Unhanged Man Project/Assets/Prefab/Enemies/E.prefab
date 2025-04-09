@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2343201672162533951, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3332206882644077972, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -80,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: db95584cbe5c3a7429f60de73740bcb4, type: 2}
+    - target: {fileID: 7853088577787496730, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 8296164203542062588, guid: 1a9b3eca318bcf64ead1e3e517567b13, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

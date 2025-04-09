@@ -13,6 +13,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 36de94be2e008c044a0ff408429885a7, type: 3}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 8296164203542062588, guid: c5b5c13af0b3fa542bc1b6e0faf08761, type: 3}
+    - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: currentHealth
       value: 10
       objectReference: {fileID: 0}
@@ -50,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5039333755736985608, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5598748615267856601, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_Sprite
@@ -263,7 +267,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.13056564, y: -0.88132286}
+  m_Offset: {x: 0, y: -0.88132286}
   m_Size: {x: 7.3373604, y: 9.892452}
   m_Direction: 0
 --- !u!82 &831324013160627597

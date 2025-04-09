@@ -17,6 +17,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 36de94be2e008c044a0ff408429885a7, type: 3}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 8296164203542062588, guid: dd248af9a5b300742bf0b5413e55e2dc, type: 3}
+    - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: currentHealth
       value: 10
       objectReference: {fileID: 0}

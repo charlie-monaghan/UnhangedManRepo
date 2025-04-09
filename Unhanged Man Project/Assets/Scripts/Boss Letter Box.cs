@@ -42,6 +42,7 @@ public class BossLetterBox : MonoBehaviour
         GameObject letterInBox = Instantiate(defeatedBossPlaceholder, transform.position, Quaternion.identity); // instantiates an empty gameobject with a sprite renderer in the box
         letterInBox.transform.SetParent(transform, false);
         letterInBox.transform.localPosition = Vector3.zero;
+        letterInBox.transform.localScale = new Vector3(0.15f, 0.15f, 0.15f);
 
         SpriteRenderer letterInBoxRenderer = letterInBox.GetComponent<SpriteRenderer>(); // gets the sprite renderer for the instantiated object
         letterInBoxRenderer.sprite = bossLetterSprite; // sets the sprite to the enemy's that just died
