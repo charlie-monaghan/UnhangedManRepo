@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     public int stackAmount;
 
     public event Action<string> onItemPickup;
+    public static event Action onUpdateItemCount;
 
     private void OnEnable()
     {
@@ -39,15 +40,17 @@ public class Item : ScriptableObject
 
     public void ActivateItem()
     {
-        if(stackAmount > 0)
+        if (stackAmount > 0)
         {
             stackAmount++;
+            onUpdateItemCount?.Invoke();
             Debug.Log("stackamount = " + stackAmount);
             onItemPickup?.Invoke(itemName);
         }
         else
         {
             stackAmount++;
+            onUpdateItemCount?.Invoke();
             Debug.Log("" + stackAmount);
             GameObject itemObject = Instantiate(itemPrefab, playerRef.transform);
         }
