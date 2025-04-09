@@ -4,8 +4,9 @@ using UnityEngine;
 public class DrawPlayerItems : MonoBehaviour
 {
     [Header("Player Stuff")]
-    [SerializeField] private GameObject player;
-    [SerializeField] private PlayerManager manager;
+    [SerializeField] private Item healthUpSO;
+    [SerializeField] private Item jumpUpSO;
+    [SerializeField] private Item moveUpSO;
 
     [Header("Item Texts")]
     [SerializeField] private TextMeshProUGUI healthUpText;
@@ -24,24 +25,10 @@ public class DrawPlayerItems : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        
-    }
-
     private void UpdateItems()
     {
-        Debug.Log("Update Items called");
-        if(player != null && manager != null)
-        {
-            int healthUpStack = manager.GetItemStack("Health Up");
-            int jumpUpStack = manager.GetItemStack("Jump Up");
-            int moveUpStack = manager.GetItemStack("Move Up");
-            Debug.LogWarning("item stacks = " + healthUpStack + " " + jumpUpStack + " " + moveUpStack);
-
-            healthUpText.text = healthUpStack.ToString();
-            jumpUpText.text = jumpUpStack.ToString();
-            moveUpText.text = moveUpStack.ToString();
-        }
+        healthUpText.text = healthUpSO.stackAmount.ToString();
+        jumpUpText.text = jumpUpSO.stackAmount.ToString();
+        moveUpText.text = moveUpSO.stackAmount.ToString();
     }
 }
