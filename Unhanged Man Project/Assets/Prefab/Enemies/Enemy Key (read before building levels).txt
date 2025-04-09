@@ -12,6 +12,8 @@ when they attack, kinda like a turret.
 
 "Floaters" fly towards the player and spin around
 
+"Jumpers" jump towards the player and try to slam into them, similar to waddlers but they got hops
+
 And some enemies just do their own thing
 
 
@@ -19,25 +21,25 @@ Key:
 
 A- Waddler
 B- 
-C- 
-D- 
+C- Floater
+D- Jumper
 E- Waddler
 F- 
 G- 
 H- Turret (attacks upwards)
 I- 
-J- 
+J- Jumper
 K- 
 L- Swinger
-M- 
+M- Jumper
 N- 
 O- Floater
-P- 
+P- Swinger (MINIBOSS only to be used in various gallows)
 Q- 
 R- Swinger
 S- Swinger
 T- Turret (attacks downards)
-U- 
+U- Magnetic field that pulls in player and enemies, damages player if touched
 V- 
 W- 
 X- Floater (MINIBOSS ONLY for Axe gallows)
