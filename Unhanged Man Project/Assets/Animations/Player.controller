@@ -560,7 +560,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 9100000}
   - m_Name: Jump
     m_Type: 9
@@ -829,7 +829,7 @@ AnimatorStateMachine:
     m_Position: {x: 790, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8439752902135761802}
-    m_Position: {x: 520, y: 290, z: 0}
+    m_Position: {x: 520, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3268263137918156735}
     m_Position: {x: 250, y: 310, z: 0}
