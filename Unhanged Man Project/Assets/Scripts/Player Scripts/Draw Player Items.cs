@@ -25,7 +25,7 @@ public class DrawPlayerItems : MonoBehaviour
 
     }
 
-    private void UpdateItems()
+    public void UpdateItems()
     {
         healthUpText.text = healthUpSO.stackAmount.ToString();
         jumpUpText.text = jumpUpSO.stackAmount.ToString();

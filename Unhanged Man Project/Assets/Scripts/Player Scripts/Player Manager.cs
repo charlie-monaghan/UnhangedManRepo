@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public Weapon currentWeapon;
     public Weapon secondWeapon;
 
+    private DrawPlayerItems drawItems;
+
     public List<Item> playerItems = new List<Item>();
 
     private void Awake()
@@ -33,6 +35,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ResetPlayerData()
     {
+        //health and weapons
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if(player != null)
         {
@@ -42,7 +45,20 @@ public class PlayerManager : MonoBehaviour
         currentWeapon = null;
         secondWeapon = null;
 
+        //items
+        foreach(Item item in playerItems)
+        {
+            item.stackAmount = 0;
+        }
         playerItems.Clear();
+
+        //update ui
+        drawItems = FindFirstObjectByType<DrawPlayerItems>();
+        if(drawItems != null)
+        {
+            drawItems.UpdateItems();
+        }
+        
     }
 
     public int GetItemStack(string itemName)
