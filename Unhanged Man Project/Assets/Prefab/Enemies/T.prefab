@@ -77,6 +77,10 @@ PrefabInstance:
       value: 0.667
       objectReference: {fileID: 0}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: attackChargeLength
+      value: 0.083
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: attackCooldownTime
       value: 3
       objectReference: {fileID: 0}

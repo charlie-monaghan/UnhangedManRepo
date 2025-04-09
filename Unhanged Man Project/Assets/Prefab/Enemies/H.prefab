@@ -62,7 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: enemyAttackLength
-      value: 0.333
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: attackChargeLength
+      value: 0.083
       objectReference: {fileID: 0}
     - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: attackCooldownTime
