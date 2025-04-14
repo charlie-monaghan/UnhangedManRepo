@@ -4739,7 +4739,7 @@ PrefabInstance:
     - target: {fileID: 653763757426926196, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
       propertyPath: secondWeapon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 29405e9141b123441a5b1d8e69b2f6e4, type: 2}
     - target: {fileID: 653763757426926196, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
       propertyPath: currentWeapon
       value: 
@@ -5341,6 +5341,18 @@ PrefabInstance:
       propertyPath: playerRef
       value: 
       objectReference: {fileID: 132794036}
+    - target: {fileID: 7040836496171911493, guid: a9003affd5a1e6f458648c0a044fa3f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865966581247309914, guid: a9003affd5a1e6f458648c0a044fa3f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067903091576092815, guid: a9003affd5a1e6f458648c0a044fa3f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
