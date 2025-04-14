@@ -17,7 +17,7 @@ public class LevelChanger : MonoBehaviour
 
     private void Update()
     {
-        if(inZone && Input.GetKeyDown(KeyCode.E))
+        if (inZone && Input.GetKeyDown(KeyCode.E))
         {
             GetNextLevel();
         }
@@ -28,6 +28,7 @@ public class LevelChanger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            //GetNextLevel();
             inZone = true;
         }
     }

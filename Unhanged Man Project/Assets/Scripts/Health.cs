@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
             //currentHealth = PlayerManager.Instance.playerHealth > 0 ? PlayerManager.Instance.playerHealth : maxHealth;
             currentHealth = PlayerManager.instance.playerHealth > 0 ? PlayerManager.instance.playerHealth : maxHealth;
         }
+        onHealthChanged?.Invoke();
     }
 
     void Update()
@@ -44,6 +45,11 @@ public class Health : MonoBehaviour
         else if (currentHealth <= 0)
         {
             onPlayerDeath?.Invoke();
+        }
+
+        if(tag == "Player" && currentHealth > maxHealth)
+        {
+            DamageHealth(0);
         }
     }
 
