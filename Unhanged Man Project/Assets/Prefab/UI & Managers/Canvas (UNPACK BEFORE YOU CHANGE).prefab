@@ -670,8 +670,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1937747173
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -7493704107873504778, guid: 3a6b4ffe9c0e5504cadb0ec61f970b4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -970,8 +970,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1937747173
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1379758376850502678, guid: 6bcf00d7095cb8a4f9a83b4eb05c53ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1704,8 +1704,8 @@ RectTransform:
   m_GameObject: {fileID: 4725554454557838909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.057, y: 0.057, z: 0.057}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3345805511949354992}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1794,8 +1794,8 @@ RectTransform:
   m_GameObject: {fileID: 4793637472423464143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9998999, y: 0.9998999, z: 0.9998999}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9203966513892947360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2809,8 +2809,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1937747173
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -7460884117374449352, guid: b789cf861892dbe429ff1d230e0cb01a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2970,7 +2970,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 1937747173
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &8193301482463335639
 MonoBehaviour:
