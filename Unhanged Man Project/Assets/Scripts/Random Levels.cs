@@ -13,7 +13,7 @@ public class RandomLevels : MonoBehaviour
     private static List<string> recentBossLevels = new List<string>();
 
     public static bool levelChosen = false;
-    private static int levelsBeat = 0;
+    public static int levelsBeat = 0;
     public static string nextLevelName;
 
     private void Awake()

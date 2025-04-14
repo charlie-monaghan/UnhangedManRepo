@@ -1262,8 +1262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DedicatedSceneName: Level1
-  randomLevels: {fileID: 0}
+  DedicatedSceneName: 
+  randomLevels: {fileID: 1344456736}
 --- !u!114 &956704507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,6 +1410,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'bossLevelNames.Array.data[0]'
+      value: Boss_Level_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'bossLevelNames.Array.data[1]'
+      value: Boss_Level_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'bossLevelNames.Array.data[2]'
+      value: Boss_Level_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'regularLevelNames.Array.data[0]'
+      value: Boss_Level_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'regularLevelNames.Array.data[1]'
+      value: Boss_Level_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'regularLevelNames.Array.data[2]'
+      value: Boss_Level_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'regularLevelNames.Array.data[3]'
+      value: Boss_Level_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'regularLevelNames.Array.data[4]'
+      value: Boss_Level_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: 'regularLevelNames.Array.data[5]'
+      value: Boss_Level_6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1551,6 +1587,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157955788}
   m_CullTransparentMesh: 1
+--- !u!114 &1344456736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+  m_PrefabInstance: {fileID: 970504457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7261c3ee488524cb478c51c5f8fe9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1396046149
 GameObject:
   m_ObjectHideFlags: 0

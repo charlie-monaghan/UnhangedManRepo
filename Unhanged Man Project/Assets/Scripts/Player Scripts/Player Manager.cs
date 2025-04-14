@@ -43,6 +43,7 @@ public class PlayerManager : MonoBehaviour
         secondWeapon = null;
 
         playerItems.Clear();
+        RandomLevels.levelsBeat = 0;
     }
 
     public int GetItemStack(string itemName)

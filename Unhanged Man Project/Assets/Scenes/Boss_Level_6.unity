@@ -175,6 +175,14 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: bossLevelNames.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970321869300272915, guid: 967cd1bfc6d1afe4aa1f5764f50171ea, type: 3}
+      propertyPath: regularLevelNames.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
