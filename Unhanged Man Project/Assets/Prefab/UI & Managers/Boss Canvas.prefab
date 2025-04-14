@@ -100,6 +100,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3655786141452030737, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655786141452030737, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655786141452030737, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655786141452030737, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6003282418197837617, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
       propertyPath: m_SortingLayer
       value: 1
