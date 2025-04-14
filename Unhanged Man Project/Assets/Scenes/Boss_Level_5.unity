@@ -5242,6 +5242,14 @@ PrefabInstance:
       propertyPath: bossStageManager
       value: 
       objectReference: {fileID: 1461520077}
+    - target: {fileID: 3554991924323783425, guid: fe232daad5af81141a551f641c94369c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554991924323783425, guid: fe232daad5af81141a551f641c94369c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1937747173
+      objectReference: {fileID: 0}
     - target: {fileID: 4901174011408381269, guid: fe232daad5af81141a551f641c94369c, type: 3}
       propertyPath: m_LocalScale.x
       value: 35.443813
@@ -5256,7 +5264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4901174011408381269, guid: fe232daad5af81141a551f641c94369c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 146.6
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4901174011408381269, guid: fe232daad5af81141a551f641c94369c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5447,9 +5455,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -10
+  m_SortingLayerID: 58102745
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3923303563060752191, guid: bf6533c1937b5a9419272cf6ea7bc1ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
@@ -5610,15 +5618,15 @@ PrefabInstance:
       objectReference: {fileID: 132794036}
     - target: {fileID: 7040836496171911493, guid: a9003affd5a1e6f458648c0a044fa3f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.16449
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 7865966581247309914, guid: a9003affd5a1e6f458648c0a044fa3f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -134
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 9067903091576092815, guid: a9003affd5a1e6f458648c0a044fa3f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
