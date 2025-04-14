@@ -1,6 +1,7 @@
 //Created by: charlie
 //Edited by: eddie and Carter
 using System.Collections;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -44,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     
     private Vector3 rollDirection;
     private float moveInput;
+
+    private int frameCounter;
 
     Animator anim;
 
@@ -91,9 +94,10 @@ public class PlayerMovement : MonoBehaviour
 
             //movement
             moveInput = Input.GetAxisRaw("Horizontal");
-            if (!isWallSliding && !canWallJump)
+            if (!isWallSliding || (isWallSliding && frameCounter >= 5))
             {
                 transform.position += new Vector3(moveInput, 0, 0) * speed * Time.deltaTime;
+                //rigidBody2D.linearVelocity = Vector2.Lerp(rigidBody2D.linearVelocity, new Vector2(moveInput * speed * 5, rigidBody2D.linearVelocityY), Time.deltaTime);
                 if (moveInput != 0f)
                 {
                     PlayerAnimationScript.isMovingX = true;
@@ -106,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
             
 
             //fliping sprite
-            if (!PlayerAttack.isAttacking) //Can't flip while attacking
+            if (!PlayerAttack.isAttacking && !isWallSliding) //Can't flip while attacking or wall sliding
             {
                 if (moveInput > 0 && !isRight)
                 {
@@ -169,12 +173,20 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        moveInput = Input.GetAxisRaw("Horizontal");
+        if (moveInput != 0f && isWallSliding)
+        {
+            frameCounter++;
+        }
+        else
+            frameCounter = 0;
+
         switch (state)
         {
             case State.Moving:
                 break;
             case State.Rolling:
-                transform.position += rollDirection * rollSpeed;
+                transform.position += rollDirection * rollSpeed * speed * 0.2f;
                 break;
         }
     }
@@ -193,7 +205,7 @@ public class PlayerMovement : MonoBehaviour
             axis = 1;
         }
         Vector3 wallJumpDirection = new Vector3(axis, 1, 0).normalized;
-        rigidBody2D.linearVelocity = new Vector3(wallJumpDirection.x * wallJumpForce, wallJumpDirection.y * wallJumpForce, 0);
+        rigidBody2D.linearVelocity = new Vector3(wallJumpDirection.x * wallJumpForce * speed * 0.1f, wallJumpDirection.y * wallJumpForce, 0);
         Invoke("ResetWallJump", 0.5f);
     }
     private void ResetWallJump()
