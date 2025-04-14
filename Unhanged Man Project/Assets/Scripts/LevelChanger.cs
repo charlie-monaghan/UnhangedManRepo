@@ -8,9 +8,19 @@ public class LevelChanger : MonoBehaviour
     private string RandomSceneName;
     [SerializeField] private RandomLevels randomLevels;
 
+    private bool inZone = false;
+
     private void Start()
     {
         randomLevels = FindAnyObjectByType<RandomLevels>();
+    }
+
+    private void Update()
+    {
+        if(inZone && Input.GetKeyDown(KeyCode.E))
+        {
+            GetNextLevel();
+        }
     }
 
 
@@ -18,7 +28,15 @@ public class LevelChanger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GetNextLevel();
+            inZone = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            inZone = false;
         }
     }
 
