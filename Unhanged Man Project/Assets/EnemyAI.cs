@@ -53,6 +53,7 @@ public class EnemyAI : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         if (groundedEnemy)
         {
             rb.gravityScale = 1.0f;
