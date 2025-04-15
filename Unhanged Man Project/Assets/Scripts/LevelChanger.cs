@@ -12,7 +12,7 @@ public class LevelChanger : MonoBehaviour
 
     private void Start()
     {
-        if (DedicatedSceneName != null && randomLevels == null)
+        //if (DedicatedSceneName == null && randomLevels == null)
             randomLevels = FindAnyObjectByType<RandomLevels>();
     }
 
@@ -20,10 +20,14 @@ public class LevelChanger : MonoBehaviour
     {
         if (inZone && Input.GetKeyDown(KeyCode.E))
         {
-            if (DedicatedSceneName == null)
-                GetNextLevel();
-            else
+            if (DedicatedSceneName != null)
+            {
                 DedicatedSceneChange(DedicatedSceneName);
+            }
+            else
+            {
+                GetNextLevel();
+            }
         }
     }
 
