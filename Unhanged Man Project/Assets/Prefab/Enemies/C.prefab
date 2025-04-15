@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: speed
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 7722591421799234270, guid: 257b96a0aca6df34db65c21badbbd541, type: 3}
+      propertyPath: playerDetectionRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8743319926287436814, guid: 257b96a0aca6df34db65c21badbbd541, type: 3}
       propertyPath: m_Radius
       value: 5.41
