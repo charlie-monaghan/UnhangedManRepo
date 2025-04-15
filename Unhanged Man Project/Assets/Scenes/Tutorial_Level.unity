@@ -9518,6 +9518,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1349523758890483143, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 565756448}
     - target: {fileID: 2032808984651643032, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
       propertyPath: player
       value: 
@@ -9602,6 +9606,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7262160334857704807, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 132794036}
     - target: {fileID: 8982751328271741551, guid: b0ea85df854444e4a8956aef8abfc9ca, type: 3}
       propertyPath: m_Name
       value: Canvas (UNPACK BEFORE YOU CHANGE)
