@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4d8d0f1e5f3554588187b069d9c565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
+  playerHealth: 10
   currentWeapon: {fileID: 0}
   secondWeapon: {fileID: 0}
   playerItems: []
@@ -62,14 +62,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regularLevelNames:
-  - Level1
-  - Level2
-  - Level3
-  - Level4
-  - Level5
-  - Level6
+  - Level_1
+  - Level_2
+  - Level_3
+  - Level_4
+  - Level_5
+  - Level_6
   bossLevelNames:
-  - BossLevel1
-  - BossLevel2
-  - BossLevel3
-  nextLevelName: 
+  - Boss_Level_1
+  - Boss_Level_2
+  - Boss_Level_3
+  - Boss_Level_4
+  - Boss_Level_5
+  - Boss_Level_6
+  - Boss_Level_7
+  - Boss_Level_8

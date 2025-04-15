@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 123235712000329923, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: nextWayPointDistance
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 691956452347428306, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: m_Name
@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 2.52
       objectReference: {fileID: 0}
+    - target: {fileID: 4354080865419089325, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 8296164203542062588, guid: ac1227461c9f4fc43911c767ea924c8f, type: 3}
     - target: {fileID: 5537903274561024080, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -86,15 +90,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8075994887751450248, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: m_Size.x
-      value: 2.7754707
+      value: 6.82
       objectReference: {fileID: 0}
     - target: {fileID: 8075994887751450248, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: m_Offset.x
-      value: -2.53
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8571727664075297266, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9126944382036898083, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: m_Sprite

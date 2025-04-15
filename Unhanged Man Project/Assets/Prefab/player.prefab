@@ -523,6 +523,8 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 10
   damageSound: {fileID: 8300000, guid: 6ef7ce3f7faa00e4890494231f4e5e9b, type: 3}
+  hitParticles: {fileID: 8296164203542062588, guid: 54ea600cd8dbb1043a4eddb862f20593, type: 3}
+  deathParticles: {fileID: 8522131096204034422, guid: 58dc67383580aec4cb2e768a5e6d2fdd, type: 3}
 --- !u!114 &8213258972303868452
 MonoBehaviour:
   m_ObjectHideFlags: 0

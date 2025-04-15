@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Axe
   sprite: {fileID: 21300000, guid: fe414a94df303a548abe99a04ca114a8, type: 3}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 8009916144577982096, guid: 6d1f49c57a06a0149b4d22ca60ce1e06, type: 3}
   stackAmount: 0
   damage: 10
-  knockbackForce: 20
-  startupLength: 0.5
-  attackLength: 0.8
-  recoveryLength: 0.03
+  knockbackForce: 12
+  startupLength: 0.4167
+  attackLength: 0.25
+  recoveryLength: 0.2

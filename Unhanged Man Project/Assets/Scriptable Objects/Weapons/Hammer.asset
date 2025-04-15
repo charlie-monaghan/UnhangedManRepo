@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b84c3e8add6c645a654f5ae13cb1fe, type: 3}
+  m_Name: Hammer
+  m_EditorClassIdentifier: 
+  itemName: Hammer
+  sprite: {fileID: 21300000, guid: bc9b1c1c20a90a3478334df10d971d3c, type: 3}
+  itemPrefab: {fileID: 8009916144577982096, guid: 6d1f49c57a06a0149b4d22ca60ce1e06, type: 3}
+  stackAmount: 0
+  damage: 6
+  knockbackForce: 20
+  startupLength: 0.4167
+  attackLength: 0.25
+  recoveryLength: 0.2

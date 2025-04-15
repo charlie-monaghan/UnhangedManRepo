@@ -17,6 +17,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 36de94be2e008c044a0ff408429885a7, type: 3}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 8296164203542062588, guid: 71960ef3ddc5d0c4c8ab2890cca4105f, type: 3}
+    - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: currentHealth
       value: 20
       objectReference: {fileID: 0}
@@ -51,6 +55,10 @@ PrefabInstance:
     - target: {fileID: 4215924532541357096, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039333755736985608, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5598748615267856601, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_Sprite

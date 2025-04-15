@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     public Transform target;
 
     [SerializeField] private GameObject Attack;
+    [SerializeField] private float attackChargeLength = 0f;
     [SerializeField] private float enemyAttackLength;
     bool isAttacking = false;
     [SerializeField] private float attackCooldownTime;
@@ -52,6 +53,7 @@ public class EnemyAI : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         if (groundedEnemy)
         {
             rb.gravityScale = 1.0f;
@@ -150,8 +152,9 @@ public class EnemyAI : MonoBehaviour
     private IEnumerator AttackPlayer()
     {
         if (isAttacking) { yield break; }
-        isAttacking = true;
         anim.SetTrigger("Attack");
+        yield return new WaitForSeconds(attackChargeLength); // wait for attack charge up time (so they don't attack on frame 1)
+        isAttacking = true;
         Attack.SetActive(true); // turn damage field on
         yield return new WaitForSeconds(enemyAttackLength); // wait for attack to finish
         Attack.SetActive(false); // turn damage field off
@@ -165,6 +168,7 @@ public class EnemyAI : MonoBehaviour
     }
     private IEnumerator Jump()
     {
+        anim.SetTrigger("Jump");
         isJumping = true;
         rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         yield return new WaitForSeconds(1);

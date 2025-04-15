@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2343201672162533951, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: m_Offset.x
-      value: 0.72
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2343201672162533951, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: m_Offset.y
@@ -253,7 +253,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: enemyAttackLength
-      value: 0.333
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: attackChargeLength
+      value: 0.083
       objectReference: {fileID: 0}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: attackCooldownTime
@@ -261,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: nextWayPointDistance
-      value: 0.6
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6416883675717689701, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: m_Name
@@ -271,6 +275,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c6594651e39536e4aaef15e70831889a, type: 2}
+    - target: {fileID: 7853088577787496730, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: hitParticles
+      value: 
+      objectReference: {fileID: 8296164203542062588, guid: 342e72288a1931d4e99a1040662f999c, type: 3}
     m_RemovedComponents:
     - {fileID: 4420260191896192405, guid: aac6e537599e20940916c52270667d2d, type: 3}
     m_RemovedGameObjects: []
