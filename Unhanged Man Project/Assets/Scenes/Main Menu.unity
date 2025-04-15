@@ -300,14 +300,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 286402531}
         m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
-        m_MethodName: StartButton
-        m_Mode: 1
+        m_MethodName: DedicatedSceneChange
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Tutorial_Level
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &286402533
