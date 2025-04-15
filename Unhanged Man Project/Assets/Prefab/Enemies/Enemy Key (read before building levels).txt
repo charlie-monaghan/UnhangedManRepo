@@ -6,13 +6,14 @@ approach the player to deal contact damage.
 "Swingers" are like waddlers, but they have actual
 attack animations and swing at the player.
 
-"Turrets" don't shoot projectiles, but they have
+"Turrets" don't shoot projectiles, but they
 don't move and have long range damage fields
-when they attack, kinda like a turret.
+when they attack, kinda like a turret I guess.
 
 "Floaters" fly towards the player and spin around
 
-"Jumpers" jump towards the player and try to slam into them, similar to waddlers but they got hops
+"Jumpers" jump towards the player and try to
+slam into them, similar to waddlers but they got hops
 
 And some enemies just do their own thing
 
@@ -25,14 +26,14 @@ C- Floater
 D- Jumper
 E- Waddler
 F- 
-G- 
+G- Floater
 H- Turret (attacks upwards)
-I- 
+I- Turret (attacks on either side)
 J- Jumper
 K- 
 L- Swinger
 M- Jumper
-N- 
+N- Waddler
 O- Floater
 P- Swinger (MINIBOSS only to be used in various gallows)
 Q- 
