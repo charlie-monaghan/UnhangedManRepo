@@ -33,4 +33,9 @@ public class Attack : MonoBehaviour
     {
         damage = SODamage; // damage value is equal to the current weapons damage
     }
+
+    public void AssignKnockback(int SOKnockback)
+    {
+        knockbackForce = SOKnockback; // knockback force is equal to the current weapons knockback
+    }
 }

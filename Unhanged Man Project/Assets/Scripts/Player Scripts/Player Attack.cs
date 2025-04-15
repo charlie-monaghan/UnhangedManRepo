@@ -75,7 +75,8 @@ public class PlayerAttack : MonoBehaviour
         audioSource.PlayOneShot(attackClip);
         yield return new WaitForSeconds(0.1f);
         PassDamageThrough(); // make sure attack volume deals correct damage
-
+        PassKnockbackThrough(); // make sure attack volume deals correct knockback
+    
 
         Attack.SetActive(true); // turn damage field on
         yield return new WaitForSeconds(currentWeapon.attackLength); // wait for attack to finish
@@ -87,6 +88,11 @@ public class PlayerAttack : MonoBehaviour
     public void PassDamageThrough()
     {
         attackVolume.AssignDamage(currentWeapon.damage); // makes sure attack volume has correct damage at attack time
+    }
+
+    public void PassKnockbackThrough()
+    {
+        attackVolume.AssignKnockback(currentWeapon.knockbackForce);
     }
 
     public void NewWeapon(Weapon otherWeapon) // if player has only one weapon, adds weapon to second slot, if not, will drop and swap equipped
