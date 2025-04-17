@@ -10322,6 +10322,14 @@ PrefabInstance:
       propertyPath: currentWeapon
       value: 
       objectReference: {fileID: 11400000, guid: 8f01583d284881542868d8140f8c149a, type: 2}
+    - target: {fileID: 964724349177855652, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044318638435711860, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
+      propertyPath: currentHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2065773537516051927, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -10341,6 +10349,18 @@ PrefabInstance:
     - target: {fileID: 6166363885801643978, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166363885801643978, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255809955970602215, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
+      propertyPath: jumpForce
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255809955970602215, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
+      propertyPath: wallJumpForce
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 6425401589095377331, guid: 9a1316a11a4765a49a967f5a4665c55c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11167,8 +11187,8 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aa0092ab4db40e0488202e16d4f69a82, type: 3}
---- !u!4 &942345599 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 524a02deaad1b1b4fa685982a909b619, type: 3}
+--- !u!4 &887409305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8254157767552150807, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
   m_PrefabInstance: {fileID: 716100344}
@@ -16164,10 +16184,11 @@ SceneRoots:
   - {fileID: 1955421002}
   - {fileID: 565756451}
   - {fileID: 1033991868}
-  - {fileID: 624890888}
-  - {fileID: 531723591}
-  - {fileID: 46998419}
-  - {fileID: 1117109655}
-  - {fileID: 659716698}
-  - {fileID: 1249072302}
-  - {fileID: 546503030}
+  - {fileID: 774358231}
+  - {fileID: 1500658236}
+  - {fileID: 282865208}
+  - {fileID: 1638698152}
+  - {fileID: 1866279193}
+  - {fileID: 1160094063}
+  - {fileID: 578852570}
+  - {fileID: 6964525673225088925}
