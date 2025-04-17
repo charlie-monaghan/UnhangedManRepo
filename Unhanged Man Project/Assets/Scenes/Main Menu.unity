@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DedicatedSceneName: 
+  DedicatedSceneName: Credits
   randomLevels: {fileID: 0}
 --- !u!114 &437886349
 MonoBehaviour:
@@ -721,13 +721,13 @@ MonoBehaviour:
       - m_Target: {fileID: 437886348}
         m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
         m_MethodName: DedicatedSceneChange
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Credits
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &437886350
@@ -2225,8 +2225,8 @@ RectTransform:
   - {fileID: 2113291136}
   - {fileID: 956704505}
   - {fileID: 286402530}
-  - {fileID: 1396046150}
   - {fileID: 437886347}
+  - {fileID: 1396046150}
   - {fileID: 814321273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
