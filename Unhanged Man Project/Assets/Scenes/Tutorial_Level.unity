@@ -10619,7 +10619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9288813e089de439cb52a2283d4d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DedicatedSceneName: Trailer_Gallows
+  DedicatedSceneName: Tutorial_Gallows
 --- !u!1001 &1346556172
 PrefabInstance:
   m_ObjectHideFlags: 0
