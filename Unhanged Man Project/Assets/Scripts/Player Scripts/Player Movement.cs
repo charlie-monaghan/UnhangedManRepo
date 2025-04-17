@@ -28,6 +28,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckForAnimatorRadius = 0.4f;
     [SerializeField] private LayerMask groundLayer;
 
+    // player moving audios
+    [SerializeField] private AudioClip jumpSFX;
+    [SerializeField] private AudioClip walkSFX;
+    [SerializeField] private AudioClip dashSFX;
+    private bool isPlayWalk;
+    private AudioSource audioSource;
+    
+
     [Header("Wall Detection")]
     public Transform wallCheck;
     public float wallCheckRadius = 0.2f;
@@ -58,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         isGroundedForAnimator = false;
         rigidBody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); // audio init
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -107,10 +116,29 @@ public class PlayerMovement : MonoBehaviour
                     PlayerAnimationScript.isMovingX = false;
                 }
             }
-            
 
-            //fliping sprite
-            if (!PlayerAttack.isAttacking && !isWallSliding) //Can't flip while attacking or wall sliding
+            // walking SFX
+            if (isGrounded && moveInput != 0f && state == State.Moving)
+            {
+                if (!isPlayWalk)
+                {
+                    audioSource.clip = walkSFX;
+                    audioSource.loop = true;
+                    audioSource.Play();
+                    isPlayWalk = true;
+                }
+            }
+            else
+            {
+                if (audioSource.isPlaying && isPlayWalk)
+                {
+                    audioSource.Stop();
+                    isPlayWalk = false;
+                }
+            }
+
+                //fliping sprite
+                if (!PlayerAttack.isAttacking && !isWallSliding) //Can't flip while attacking or wall sliding
             {
                 if (moveInput > 0 && !isRight)
                 {
@@ -135,12 +163,16 @@ public class PlayerMovement : MonoBehaviour
                 if (isGrounded)
                 {
                     anim.SetTrigger("Jump");
+                    // play jump sound
+                    audioSource.PlayOneShot(jumpSFX);
                     rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                     audioSource.PlayOneShot(jumpClip);
                 }
                 else if (isWallSliding)
                 {
                     anim.SetTrigger("Jump");
+                    // play jump sound
+                    audioSource.PlayOneShot(jumpSFX);
                     WallJump();
                 }
             }
@@ -152,6 +184,7 @@ public class PlayerMovement : MonoBehaviour
                 //rigidBody2D.AddForce(new Vector2(rollSpeed * moveInput, 0), ForceMode2D.Impulse);
                 rollSpeed = 0.5f;
                 state = State.Rolling;
+                audioSource.PlayOneShot(dashSFX);
                 rollDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0).normalized;
                 isInvincible = true;
                 anim.SetTrigger("Roll");

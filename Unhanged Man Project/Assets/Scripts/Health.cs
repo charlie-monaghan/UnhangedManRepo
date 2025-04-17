@@ -11,6 +11,10 @@ public class Health : MonoBehaviour
     private AudioSource audioSource;
     private AudioSource persSource;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip damageSFX;
+    [SerializeField] private AudioClip healSFX;
+
     public event Action onHealthChanged;
     public event Action onPlayerDeath;
 
@@ -62,6 +66,10 @@ public class Health : MonoBehaviour
         {
             PlayerManager.instance.playerHealth = currentHealth;
         }
+        if (audioSource != null && healSFX != null)
+        {
+            audioSource.PlayOneShot(healSFX);
+        }
 
         onHealthChanged?.Invoke();
     }
@@ -75,6 +83,9 @@ public class Health : MonoBehaviour
         if (tag == "Player")
         {
             PlayerManager.instance.playerHealth = currentHealth;
+        }
+        if (audioSource != null && damageSFX != null) {
+            audioSource.PlayOneShot(damageSFX);
         }
 
         Instantiate(hitParticles, gameObject.transform.position, gameObject.transform.rotation);
