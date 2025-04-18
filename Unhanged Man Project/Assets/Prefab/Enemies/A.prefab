@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: idleClip
       value: 
-      objectReference: {fileID: 8300000, guid: ac0bb803e505cc1448c555aca58ef09f, type: 3}
+      objectReference: {fileID: 8300000, guid: 584ec8f9277d2264e9ae5416fc667e52, type: 3}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: jumpForce
       value: 4

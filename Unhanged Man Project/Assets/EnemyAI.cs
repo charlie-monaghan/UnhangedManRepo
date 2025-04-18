@@ -98,7 +98,7 @@ public class EnemyAI : MonoBehaviour
         if (idleSoundCooldown > 0)
             idleSoundCooldown--;
 
-        if (Random.Range(0f, 1f) <= 0.01f && idleSoundCooldown == 0)
+        if (Random.Range(0f, 1f) <= 0.01f && idleSoundCooldown == 0 && idleClip != null)
         {
             audioSource.PlayOneShot(idleClip);
             idleSoundCooldown = 300;
