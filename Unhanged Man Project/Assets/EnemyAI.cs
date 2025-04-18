@@ -60,7 +60,6 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.5f;
         if (groundedEnemy)
         {
             rb.gravityScale = 3.0f;

@@ -4,7 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] public int maxHealth = 3;
-    [SerializeField] private int currentHealth;
+    [SerializeField] public int currentHealth;
     [SerializeField] private AudioClip damageSound;
     [SerializeField] public GameObject hitParticles;
     [SerializeField] public GameObject deathParticles;
