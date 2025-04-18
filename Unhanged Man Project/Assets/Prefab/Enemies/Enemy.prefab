@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
-  damageSound: {fileID: 8300000, guid: 36de94be2e008c044a0ff408429885a7, type: 3}
+  damageSound: {fileID: 8300000, guid: ec9dbb7688a717241a73f861383ff65c, type: 3}
   hitParticles: {fileID: 8296164203542062588, guid: dd248af9a5b300742bf0b5413e55e2dc, type: 3}
   deathParticles: {fileID: 8522131096204034422, guid: 58dc67383580aec4cb2e768a5e6d2fdd, type: 3}
 --- !u!50 &5039333755736985608
@@ -217,6 +217,8 @@ MonoBehaviour:
   nextWayPointDistance: 3
   enemyGFX: {fileID: 6857007703727955676}
   playerDetectionRange: 5
+  idleClip: {fileID: 8300000, guid: ac0bb803e505cc1448c555aca58ef09f, type: 3}
+  attackClip: {fileID: 8300000, guid: 59f22659c12b32040a00b6cbb5c68233, type: 3}
 --- !u!1 &7237558217495696395
 GameObject:
   m_ObjectHideFlags: 0

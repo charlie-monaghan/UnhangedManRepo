@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 450080780327903475, guid: 5aa2789bae18f3c4db11e2bd3b5ac60c, type: 3}
     - target: {fileID: 4730025226475215042, guid: 5a319b1b232ae5a41881bb7c65424a08, type: 3}
       propertyPath: speed
-      value: 275
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 4730025226475215042, guid: 5a319b1b232ae5a41881bb7c65424a08, type: 3}
       propertyPath: canJump
@@ -230,8 +230,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -5.14}
-  m_Size: {x: 3.43, y: 4.28}
+  m_Offset: {x: -0.4069826, y: -4.895811}
+  m_Size: {x: 2.6160357, y: 4.4427934}
   m_Direction: 0
 --- !u!1 &6722989683203938160 stripped
 GameObject:

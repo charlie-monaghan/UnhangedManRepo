@@ -89,6 +89,10 @@ PrefabInstance:
       value: I
       objectReference: {fileID: 0}
     - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8933bdcbccc9b3242940432fe2db0365, type: 3}
+    - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: enemyAttackLength
       value: 0.167
       objectReference: {fileID: 0}

@@ -42,10 +42,15 @@ public class EnemyAI : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
 
+    [SerializeField] AudioClip idleClip;
+    [SerializeField] AudioClip attackClip;
+    AudioSource audioSource;
+    int idleSoundCooldown;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        idleSoundCooldown = 0;
         if (!bodyIsWeapon)
         {
             Attack.SetActive(false);
@@ -54,12 +59,19 @@ public class EnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.5f;
         if (groundedEnemy)
         {
-            rb.gravityScale = 1.0f;
+            rb.gravityScale = 3.0f;
+        }
+        else
+        {
+            rb.gravityScale = 0f;
         }
         InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
+
     void UpdatePath()
     {
         if (!playerDetected && Mathf.Abs(rb.position.x - target.position.x) < playerDetectionRange)
@@ -83,6 +95,15 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (idleSoundCooldown > 0)
+            idleSoundCooldown--;
+
+        if (Random.Range(0f, 1f) <= 0.01f && idleSoundCooldown == 0)
+        {
+            audioSource.PlayOneShot(idleClip);
+            idleSoundCooldown = 300;
+        }
+
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
         if (path == null)
             return;
@@ -156,6 +177,7 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(attackChargeLength); // wait for attack charge up time (so they don't attack on frame 1)
         isAttacking = true;
         Attack.SetActive(true); // turn damage field on
+        audioSource.PlayOneShot(attackClip);
         yield return new WaitForSeconds(enemyAttackLength); // wait for attack to finish
         Attack.SetActive(false); // turn damage field off
         isAttacking= false;

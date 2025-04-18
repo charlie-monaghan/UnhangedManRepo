@@ -74,11 +74,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
       propertyPath: speed
-      value: 250
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6193e01f00417894795e6ce20c817e7c, type: 3}
+    - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
       propertyPath: jumpForce
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
       propertyPath: wallCheckRadius
