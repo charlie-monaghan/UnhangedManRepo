@@ -482,7 +482,8 @@ MonoBehaviour:
   canWallJump: 0
   wallSlideSpeed: 0.25
   wallJumpForce: 12
-  jumpClip: {fileID: 8300000, guid: 9f44e120816699e4180c2d3ea3f8aee0, type: 3}
+  jumpClip: {fileID: 8300000, guid: ef8fd73fc30b6c944820de688b0d7699, type: 3}
+  rollClip: {fileID: 8300000, guid: 89dfbfd941207204cbae7bd07495c12b, type: 3}
   groundCheck: {fileID: 8089383503358650433}
   groundCheckRadius: 0.2
   groundCheckForAnimatorRadius: 0.4
