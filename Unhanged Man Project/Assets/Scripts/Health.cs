@@ -18,7 +18,12 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
+        if(tag == "Player")
+        {
+            Debug.LogWarning(PlayerManager.instance.playerHealth);
+            currentHealth = PlayerManager.instance.playerHealth > 0 ? PlayerManager.instance.playerHealth : maxHealth;
+        }
     }
     private void Start()
     {
@@ -27,7 +32,8 @@ public class Health : MonoBehaviour
         if (tag == "Player")
         {
             //currentHealth = PlayerManager.Instance.playerHealth > 0 ? PlayerManager.Instance.playerHealth : maxHealth;
-            currentHealth = PlayerManager.instance.playerHealth > 0 ? PlayerManager.instance.playerHealth : maxHealth;
+            //Debug.LogWarning(PlayerManager.instance.playerHealth);
+            //currentHealth = PlayerManager.instance.playerHealth > 0 ? PlayerManager.instance.playerHealth : maxHealth;
         }
         onHealthChanged?.Invoke();
     }
@@ -49,7 +55,9 @@ public class Health : MonoBehaviour
 
         if(tag == "Player" && currentHealth > maxHealth)
         {
-            DamageHealth(0);
+            currentHealth = maxHealth;
+            PlayerManager.instance.playerHealth = currentHealth;
+            //DamageHealth(0);
         }
     }
 
