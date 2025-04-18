@@ -16,17 +16,12 @@ public class Health : MonoBehaviour
 
     public event Action onBossEnemyDeath;
 
-    void Awake()
-    {
-        currentHealth = maxHealth;
-    }
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         persSource = GameObject.FindGameObjectWithTag("PersistentAudioSource").GetComponent<AudioSource>();
         if (tag == "Player")
         {
-            //currentHealth = PlayerManager.Instance.playerHealth > 0 ? PlayerManager.Instance.playerHealth : maxHealth;
             currentHealth = PlayerManager.instance.playerHealth > 0 ? PlayerManager.instance.playerHealth : maxHealth;
         }
         onHealthChanged?.Invoke();
@@ -42,14 +37,9 @@ public class Health : MonoBehaviour
             gameObject.SetActive(false);
             onBossEnemyDeath?.Invoke();
         }
-        else if (currentHealth <= 0)
+        else if (currentHealth <= 0) // kills player
         {
             onPlayerDeath?.Invoke();
-        }
-
-        if(tag == "Player" && currentHealth > maxHealth)
-        {
-            DamageHealth(0);
         }
     }
 
@@ -60,6 +50,12 @@ public class Health : MonoBehaviour
 
         if(tag == "Player")
         {
+            PlayerManager.instance.playerHealth = currentHealth;
+        }
+
+        if (tag == "Player" && currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
             PlayerManager.instance.playerHealth = currentHealth;
         }
 
@@ -74,6 +70,12 @@ public class Health : MonoBehaviour
 
         if (tag == "Player")
         {
+            PlayerManager.instance.playerHealth = currentHealth;
+        }
+
+        if (tag == "Player" && currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
             PlayerManager.instance.playerHealth = currentHealth;
         }
 
