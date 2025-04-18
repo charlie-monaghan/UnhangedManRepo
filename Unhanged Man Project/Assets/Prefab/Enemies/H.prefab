@@ -65,6 +65,14 @@ PrefabInstance:
       value: H
       objectReference: {fileID: 0}
     - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: attackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8639d45a733b44642aa2b0f47870a782, type: 3}
+    - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: enemyAttackLength
       value: 0.25
       objectReference: {fileID: 0}

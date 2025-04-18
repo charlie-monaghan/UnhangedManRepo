@@ -171,6 +171,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8928329220757682176}
     - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 27de21037794bb94eb33be58bd5da738, type: 3}
+    - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: bodyIsWeapon
       value: 1
       objectReference: {fileID: 0}
