@@ -5,6 +5,7 @@ public class HealthPickup : MonoBehaviour
 {
     [SerializeField] private int healthToHeal;
     [SerializeField] private bool guaranteedToSpawn;
+    [SerializeField] private float spawnThreshold = 3f;
     GameObject player;
 
     private void Start()
@@ -13,7 +14,7 @@ public class HealthPickup : MonoBehaviour
 
         if (!guaranteedToSpawn)
         {
-            if (UnityEngine.Random.Range(0f, 10f) * Math.Sqrt(player.GetComponent<Health>().currentHealth / player.GetComponent<Health>().maxHealth) >= 3f)
+            if (UnityEngine.Random.Range(0f, 10f) * Math.Sqrt(player.GetComponent<Health>().currentHealth / player.GetComponent<Health>().maxHealth) >= spawnThreshold)
             {
                 gameObject.SetActive(false);
             }
