@@ -147,9 +147,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 160704706840479978, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: maxHealth
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 160704706840479978, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: hitParticles
       value: 
       objectReference: {fileID: 8296164203542062588, guid: 5a2c343681f9b8240b7ae3a23ad63474, type: 3}
+    - target: {fileID: 160704706840479978, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: currentHealth
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2669876582202766901, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: m_Size.x
       value: 9.1

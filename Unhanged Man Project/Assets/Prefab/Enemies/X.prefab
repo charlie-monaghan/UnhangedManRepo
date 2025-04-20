@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: maxHealth
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: damageSound
@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 8296164203542062588, guid: 71960ef3ddc5d0c4c8ab2890cca4105f, type: 3}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: currentHealth
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: speed
@@ -216,7 +216,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 11
+  m_Radius: 10
 --- !u!114 &8706602454317689106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 10.5
+  m_Radius: 9.5
 --- !u!82 &885579539073907621
 AudioSource:
   m_ObjectHideFlags: 0
