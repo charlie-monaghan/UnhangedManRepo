@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallSlideSpeed; //0.5f
     [SerializeField] private float wallJumpForce; //2.0f
     [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip rollClip;
     private AudioSource audioSource;
 
     [Header("Ground Detection")]
@@ -150,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift) && !isCoolingDown /*&& isGrounded*/)
             {
                 //rigidBody2D.AddForce(new Vector2(rollSpeed * moveInput, 0), ForceMode2D.Impulse);
+                audioSource.PlayOneShot(rollClip);
                 rollSpeed = 0.5f;
                 state = State.Rolling;
                 rollDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0).normalized;

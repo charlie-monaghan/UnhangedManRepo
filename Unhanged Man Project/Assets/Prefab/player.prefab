@@ -154,8 +154,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.036608715, y: -0.00011563957}
-  m_Size: {x: 0.97537446, y: 1.9868895}
+  m_Offset: {x: 0.110371746, y: -0.11787795}
+  m_Size: {x: 1.5470418, y: 1.799675}
   m_Direction: 1
 --- !u!114 &5241521776527423981
 MonoBehaviour:
@@ -482,7 +482,8 @@ MonoBehaviour:
   canWallJump: 0
   wallSlideSpeed: 0.25
   wallJumpForce: 12
-  jumpClip: {fileID: 8300000, guid: 9f44e120816699e4180c2d3ea3f8aee0, type: 3}
+  jumpClip: {fileID: 8300000, guid: ef8fd73fc30b6c944820de688b0d7699, type: 3}
+  rollClip: {fileID: 8300000, guid: 89dfbfd941207204cbae7bd07495c12b, type: 3}
   groundCheck: {fileID: 8089383503358650433}
   groundCheckRadius: 0.2
   groundCheckForAnimatorRadius: 0.4
@@ -507,7 +508,7 @@ MonoBehaviour:
   attackDuration: 1
   currentWeapon: {fileID: 11400000, guid: 8f01583d284881542868d8140f8c149a, type: 2}
   secondWeapon: {fileID: 0}
-  attackClip: {fileID: 8300000, guid: c92bb54f349e8a6458205f4cebc93f9d, type: 3}
+  attackClip: {fileID: 8300000, guid: f674047e478900e40b8facf73296fcc0, type: 3}
 --- !u!114 &1044318638435711860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
-  damageSound: {fileID: 8300000, guid: 6ef7ce3f7faa00e4890494231f4e5e9b, type: 3}
+  damageSound: {fileID: 8300000, guid: de509ca6076853d4f97bf7ca2b67ed9a, type: 3}
   hitParticles: {fileID: 8296164203542062588, guid: 54ea600cd8dbb1043a4eddb862f20593, type: 3}
   deathParticles: {fileID: 8522131096204034422, guid: 58dc67383580aec4cb2e768a5e6d2fdd, type: 3}
 --- !u!114 &8213258972303868452
@@ -609,7 +610,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

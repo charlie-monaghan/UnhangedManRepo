@@ -90,12 +90,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: speed
-      value: 450
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: canJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ac0bb803e505cc1448c555aca58ef09f, type: 3}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: jumpForce
       value: 5
@@ -122,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 1dab45ceb6c1696479e702b4a0601cae, type: 2}
     - target: {fileID: 7853088577787496730, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: maxHealth
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7853088577787496730, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: hitParticles
@@ -130,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 8296164203542062588, guid: 861ce0bfa76c3314b83da315e00cf5c6, type: 3}
     - target: {fileID: 7853088577787496730, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: currentHealth
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -10,12 +10,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 123235712000329923, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: speed
-      value: 400
+      value: 850
       objectReference: {fileID: 0}
+    - target: {fileID: 123235712000329923, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a98dfb8541534984bb637ac35cadc7d8, type: 3}
     - target: {fileID: 123235712000329923, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: isFlipped
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 123235712000329923, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
+      propertyPath: attackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 88d1657771b58224191dff6fb475ddd2, type: 3}
     - target: {fileID: 123235712000329923, guid: cb26de6bb58b4524dacad16bfa17b556, type: 3}
       propertyPath: attackChargeLength
       value: 0.167

@@ -36,6 +36,7 @@ public class DrawPlayerHealth : MonoBehaviour
     {
         if (playerHealth != null)
         {
+            Debug.LogWarning(playerHealth.ReturnHealth());
             heartNumber.text = playerHealth.ReturnHealth().ToString();
         }
     }
