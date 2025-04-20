@@ -387,7 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Main Menu
+  DedicatedSceneName: Main Menu
+  randomLevels: {fileID: 0}
 --- !u!114 &706852284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,13 +436,13 @@ MonoBehaviour:
       - m_Target: {fileID: 706852283}
         m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
         m_MethodName: DedicatedSceneChange
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Main Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &706852285

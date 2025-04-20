@@ -620,6 +620,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396954952}
   m_CullTransparentMesh: 1
+--- !u!1001 &431219106
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 600442509028114940, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339099077413295664, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
+      propertyPath: m_Name
+      value: AudioKeeperObject 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7597c34d9be46d4b985d26a3785afb2, type: 3}
 --- !u!1 &437886346
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7284257d75348893d4dfaf950bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DedicatedSceneName: 
+  DedicatedSceneName: Credits
   randomLevels: {fileID: 0}
 --- !u!114 &437886349
 MonoBehaviour:
@@ -721,13 +778,13 @@ MonoBehaviour:
       - m_Target: {fileID: 437886348}
         m_TargetAssemblyTypeName: LevelChanger, Assembly-CSharp
         m_MethodName: DedicatedSceneChange
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Credits
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &437886350
@@ -2225,8 +2282,8 @@ RectTransform:
   - {fileID: 2113291136}
   - {fileID: 956704505}
   - {fileID: 286402530}
-  - {fileID: 1396046150}
   - {fileID: 437886347}
+  - {fileID: 1396046150}
   - {fileID: 814321273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2384,3 +2441,4 @@ SceneRoots:
   - {fileID: 851486758}
   - {fileID: 167052522}
   - {fileID: 970504457}
+  - {fileID: 431219106}
