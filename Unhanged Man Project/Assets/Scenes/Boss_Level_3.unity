@@ -887,7 +887,7 @@ PrefabInstance:
       objectReference: {fileID: 2031715609}
     - target: {fileID: 189753527983730290, guid: 04f4a955d0413f5429cf8b46439dc4d8, type: 3}
       propertyPath: enemiesInScene
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 189753527983730290, guid: 04f4a955d0413f5429cf8b46439dc4d8, type: 3}
       propertyPath: levelTransition

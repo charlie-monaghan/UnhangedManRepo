@@ -8,6 +8,7 @@ public class DeathScreen : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         deathScreen.SetActive(false);
         playerHealth = player.GetComponent<Health>();
         if (playerHealth != null) 
