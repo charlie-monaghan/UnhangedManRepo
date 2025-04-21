@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
         playerHealth = health;
         currentWeapon = current;
         secondWeapon = second;
+        Debug.LogWarning("save player data health = "+playerHealth);
     }
 
     public void ResetPlayerData()

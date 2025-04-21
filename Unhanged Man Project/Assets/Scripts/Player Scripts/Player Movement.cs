@@ -1,9 +1,9 @@
 //Created by: charlie
 //Edited by: eddie and Carter
 using System.Collections;
-using UnityEditor.Rendering;
+//using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.Rendering;
+//using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {

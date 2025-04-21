@@ -16,6 +16,14 @@ public class Health : MonoBehaviour
 
     public event Action onBossEnemyDeath;
 
+    private void Awake()
+    {
+        if (tag == "Player")
+        {
+            Debug.Log("awake health = " + currentHealth+" / "+maxHealth);
+        }
+    }
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -23,6 +31,8 @@ public class Health : MonoBehaviour
         if (tag == "Player")
         {
             currentHealth = PlayerManager.instance.playerHealth > 0 ? PlayerManager.instance.playerHealth : maxHealth;
+            Debug.Log("start health = " + currentHealth + " / " + maxHealth);
+
         }
         onHealthChanged?.Invoke();
     }
@@ -40,6 +50,12 @@ public class Health : MonoBehaviour
         else if (currentHealth <= 0) // kills player
         {
             onPlayerDeath?.Invoke();
+        }
+
+        if(tag == "Player")
+        {
+            PlayerAttack playerAttack = GetComponent<PlayerAttack>();
+            PlayerManager.instance.SavePlayerData(ReturnHealth(), playerAttack.currentWeapon, playerAttack.secondWeapon);
         }
     }
 
