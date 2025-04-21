@@ -52,11 +52,11 @@ public class Health : MonoBehaviour
             onPlayerDeath?.Invoke();
         }
 
-        if(tag == "Player")
-        {
-            PlayerAttack playerAttack = GetComponent<PlayerAttack>();
-            PlayerManager.instance.SavePlayerData(ReturnHealth(), playerAttack.currentWeapon, playerAttack.secondWeapon);
-        }
+        //if(tag == "Player")
+        //{
+        //    PlayerAttack playerAttack = GetComponent<PlayerAttack>();
+        //    PlayerManager.instance.SavePlayerData(ReturnHealth(), playerAttack.currentWeapon, playerAttack.secondWeapon);
+        //}
     }
 
     public void HealHealth(int healing)

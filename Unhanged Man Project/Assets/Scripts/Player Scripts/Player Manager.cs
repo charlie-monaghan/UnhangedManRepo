@@ -43,7 +43,11 @@ public class PlayerManager : MonoBehaviour
             Health playerHealthComp = player.GetComponent<Health>();
             playerHealth = playerHealthComp.maxHealth;
         }
-        currentWeapon = null;
+        else
+        {
+            Debug.LogWarning("Player not found");
+        }
+            currentWeapon = null;
         secondWeapon = null;
 
         //items
