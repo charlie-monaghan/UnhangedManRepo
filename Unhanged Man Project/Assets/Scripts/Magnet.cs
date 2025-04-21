@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System;
 using Unity.Cinemachine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+//using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Magnet : MonoBehaviour
 {
