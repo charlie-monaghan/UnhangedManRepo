@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: b600ea8005c7d524f9708486e6d2d569
+guid: 04c8f65761003d6438ce2e2c3accd451
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 807139013275419232
-    second: WallSlide_0
+      213: -3341455840547831962
+    second: Tilemap_Backup_0
   - first:
-      213: 4790224360120944667
-    second: WallSlide_1
+      213: -6363763616551872934
+    second: Tilemap_Backup_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,7 +100,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,8 +113,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 16384
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -129,45 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WallSlide_0
+      name: Tilemap_Backup_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1024
-        width: 1024
-        height: 1024
-      alignment: 9
-      pivot: {x: 0.34, y: 0.32}
+        x: 336
+        y: 336
+        width: 128
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 1b91b554f5691984baf4366baf357d95
-      internalID: -960019545
+      spriteID: 66ffd77ed93c0a1d0800000000000000
+      internalID: -3341455840547831962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WallSlide_1
+      name: Tilemap_Backup_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 600
         y: 0
-        width: 1024
-        height: 1024
-      alignment: 9
-      pivot: {x: 0.34, y: 0.32}
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cc34f18de477cb449a9a0a9891418699
-      internalID: -610274818
+      spriteID: a56ded815be5fa7a0800000000000000
+      internalID: -6363763616551872934
       vertices: []
       indices: 
       edges: []
@@ -176,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 38d517465000be34dabe53d1789a9bcc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +185,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      WallSlide_0: -960019545
-      WallSlide_1: -610274818
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
