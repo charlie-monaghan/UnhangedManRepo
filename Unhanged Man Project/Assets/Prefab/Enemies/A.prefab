@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: damageSound
       value: 
-      objectReference: {fileID: 8300000, guid: 36de94be2e008c044a0ff408429885a7, type: 3}
+      objectReference: {fileID: 8300000, guid: ec9dbb7688a717241a73f861383ff65c, type: 3}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: hitParticles
       value: 
@@ -21,6 +21,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: speed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: Attack
       value: 
       objectReference: {fileID: 625497875179232504}
@@ -28,6 +32,10 @@ PrefabInstance:
       propertyPath: canJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 584ec8f9277d2264e9ae5416fc667e52, type: 3}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: jumpForce
       value: 4
@@ -50,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: playerDetectionRange
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4215924532541357096, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_Name
@@ -295,10 +303,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 5
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -306,23 +314,32 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.25
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -4.695815
+      outSlope: -4.695815
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0.2080615
+    - serializedVersion: 3
+      time: 0.44708252
+      value: 0.3829651
+      inSlope: -1.608235
+      outSlope: -1.608235
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.16747534
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.10723325
+      outSlope: -0.10723325
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.26315433
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -331,7 +348,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -25,7 +25,7 @@ public class Attack : MonoBehaviour
         }
         else if (otherHealth == null)
         {
-            Debug.Log("otherHealth is null");
+            
         }
     }
 

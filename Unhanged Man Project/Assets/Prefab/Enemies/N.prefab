@@ -90,12 +90,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: speed
-      value: 450
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: canJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ac0bb803e505cc1448c555aca58ef09f, type: 3}
     - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: jumpForce
       value: 5

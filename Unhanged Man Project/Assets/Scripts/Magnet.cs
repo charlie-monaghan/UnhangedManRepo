@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System;
 using Unity.Cinemachine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+//using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Magnet : MonoBehaviour
 {
@@ -25,7 +25,7 @@ public class Magnet : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag != "Player")
-            other.attachedRigidbody.AddForce((this.transform.position - other.transform.position).normalized * 2f / (float)Math.Sqrt(Vector2.Distance(this.transform.position, other.transform.position)));
+            other.attachedRigidbody.AddForce((this.transform.position - other.transform.position).normalized * 3f / (float)Math.Sqrt(Vector2.Distance(this.transform.position, other.transform.position)));
     }
 
     private void OnTriggerExit2D(Collider2D other)

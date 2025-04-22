@@ -31,6 +31,7 @@ public class PlayerManager : MonoBehaviour
         playerHealth = health;
         currentWeapon = current;
         secondWeapon = second;
+        Debug.LogWarning("save player data health = "+playerHealth);
     }
 
     public void ResetPlayerData()
@@ -42,7 +43,11 @@ public class PlayerManager : MonoBehaviour
             Health playerHealthComp = player.GetComponent<Health>();
             playerHealth = playerHealthComp.maxHealth;
         }
-        currentWeapon = null;
+        else
+        {
+            Debug.LogWarning("Player not found");
+        }
+            currentWeapon = null;
         secondWeapon = null;
 
         //items

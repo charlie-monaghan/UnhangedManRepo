@@ -10,11 +10,13 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject Attack;
     [SerializeField] private float attackDuration = 1.0f;
     public static bool isAttacking = false;
+    public static bool canAttack = true;
     [SerializeField] public Weapon currentWeapon;
     [SerializeField] public Weapon secondWeapon;
     [SerializeField] public AudioClip attackClip;
     private AudioSource audioSource;
     private Animator anim;
+    Health playerHealth;
 
     private Attack attackVolume;
 
@@ -22,6 +24,8 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
+        playerHealth = GetComponent<Health>();
+
         Attack.SetActive(false); // make sure the damage field is off when game loads (redundancy)
         attackVolume = Attack.GetComponent<Attack>();
         audioSource = GetComponent<AudioSource>();
@@ -31,9 +35,10 @@ public class PlayerAttack : MonoBehaviour
         {
             currentWeapon = PlayerManager.instance.currentWeapon ?? currentWeapon;
             secondWeapon = PlayerManager.instance.secondWeapon ?? secondWeapon;
+            onWeaponChange?.Invoke();
         }
 
-        PlayerManager.instance.SavePlayerData(PlayerManager.instance.playerHealth, currentWeapon, secondWeapon);
+        PlayerManager.instance.SavePlayerData(playerHealth.ReturnHealth(), currentWeapon, secondWeapon);
     }
 
     void Update()
@@ -66,9 +71,10 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator attackLogic()
     {
-        if (isAttacking) yield break; // if attack is already happening, break
+        if (!canAttack) yield break; // if cooldown active, break
 
         anim.SetTrigger("AttackInput");
+        canAttack = false;
         isAttacking = true; // player is attacking
         yield return new WaitForEndOfFrame();
         yield return new WaitForSeconds(currentWeapon.startupLength - 0.1f); // wait for the start up before attack can hit
@@ -81,9 +87,11 @@ public class PlayerAttack : MonoBehaviour
         Attack.SetActive(true); // turn damage field on
         yield return new WaitForSeconds(currentWeapon.attackLength); // wait for attack to finish
         Attack.SetActive(false); // turn damage field off
-
-        yield return new WaitForSeconds(currentWeapon.recoveryLength); // wait recovery time
+        yield return new WaitForSeconds(0.1f);
         isAttacking = false; // player no longer attacking
+
+        yield return new WaitForSeconds(currentWeapon.recoveryLength - 0.1f); // wait recovery time
+        canAttack = true; // player no longer attacking
     }
     public void PassDamageThrough()
     {
@@ -108,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("swapped current weapon to " + currentWeapon.GetItemName());
         }
 
-        PlayerManager.instance.SavePlayerData(PlayerManager.instance.playerHealth, currentWeapon, secondWeapon);
+        PlayerManager.instance.SavePlayerData(playerHealth.ReturnHealth(), currentWeapon, secondWeapon);
         onWeaponChange?.Invoke();
     }
 
@@ -127,7 +135,7 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
 
-        PlayerManager.instance.SavePlayerData(PlayerManager.instance.playerHealth, currentWeapon, secondWeapon);
+        PlayerManager.instance.SavePlayerData(playerHealth.ReturnHealth(), currentWeapon, secondWeapon);
         onWeaponChange?.Invoke();
     }
 }

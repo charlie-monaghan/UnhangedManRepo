@@ -17,7 +17,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 3123757095376014989, guid: 5eaf78f89ce677e4fa916704a609aea9, type: 3}
   stackAmount: 0
   damage: 4
-  knockbackForce: 8
+  knockbackForce: 12
   startupLength: 0.167
   attackLength: 0.25
-  recoveryLength: 0.05
+  recoveryLength: 0.1

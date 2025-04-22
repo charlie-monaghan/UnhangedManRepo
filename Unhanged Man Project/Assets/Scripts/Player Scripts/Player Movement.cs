@@ -1,9 +1,9 @@
 //Created by: charlie
 //Edited by: eddie and Carter
 using System.Collections;
-using UnityEditor.Rendering;
+//using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.Rendering;
+//using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallSlideSpeed; //0.5f
     [SerializeField] private float wallJumpForce; //2.0f
     [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip rollClip;
     private AudioSource audioSource;
 
     [Header("Ground Detection")]
@@ -51,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isCoolingDown = false;
     
-    private Vector3 rollDirection;
+    private Vector2 rollDirection;
     private float moveInput;
 
     private int frameCounter;
@@ -75,6 +76,14 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         isGroundedForAnimator = Physics2D.OverlapCircle(groundCheck.position, groundCheckForAnimatorRadius, groundLayer);
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
+        if (isInvincible)
+        {
+            rigidBody2D.excludeLayers = LayerMask.GetMask("Enemies");
+        }
+        else
+        {
+            rigidBody2D.excludeLayers = LayerMask.GetMask("Nothing");
+        }
         switch (state) {
         case State.Moving:
             //Grounded check for animator
@@ -87,55 +96,8 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("Grounded", false);
             }
 
-            if (isTouchingWall && !isGrounded && rigidBody2D.linearVelocity.y < 0)
-            {
-                isWallSliding = true;
-                anim.SetBool("IsWallSliding", true);
-                anim.SetBool("Grounded", false);
-                PlayerAnimationScript.isMovingX = false;
-                rigidBody2D.linearVelocity = new Vector2(0, rigidBody2D.linearVelocity.y * wallSlideSpeed);
-            }
-            else
-            {
-                isWallSliding = false;
-                anim.SetBool("IsWallSliding", false);
-            }
-
-            //movement
-            moveInput = Input.GetAxisRaw("Horizontal");
-            if (!isWallSliding || (isWallSliding && frameCounter >= 5))
-            {
-                transform.position += new Vector3(moveInput, 0, 0) * speed * Time.deltaTime;
-                //rigidBody2D.linearVelocity = Vector2.Lerp(rigidBody2D.linearVelocity, new Vector2(moveInput * speed * 5, rigidBody2D.linearVelocityY), Time.deltaTime);
-                if (moveInput != 0f)
-                {
-                    PlayerAnimationScript.isMovingX = true;
-                }
-                else if (moveInput == 0f)
-                {
-                    PlayerAnimationScript.isMovingX = false;
-                }
-            }
-
-            // walking SFX
-            if (isGrounded && moveInput != 0f && state == State.Moving)
-            {
-                if (!isPlayWalk)
-                {
-                    audioSource.clip = walkSFX;
-                    audioSource.loop = true;
-                    audioSource.Play();
-                    isPlayWalk = true;
-                }
-            }
-            else
-            {
-                if (audioSource.isPlaying && isPlayWalk)
-                {
-                    audioSource.Stop();
-                    isPlayWalk = false;
-                }
-            }
+           
+            
 
                 //fliping sprite
                 if (!PlayerAttack.isAttacking && !isWallSliding) //Can't flip while attacking or wall sliding
@@ -167,6 +129,8 @@ public class PlayerMovement : MonoBehaviour
                     audioSource.PlayOneShot(jumpSFX);
                     rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                     audioSource.PlayOneShot(jumpClip);
+                    canWallJump = true;
+                    Invoke("ResetWallJump", 0.1f);
                 }
                 else if (isWallSliding)
                 {
@@ -182,24 +146,13 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift) && !isCoolingDown /*&& isGrounded*/)
             {
                 //rigidBody2D.AddForce(new Vector2(rollSpeed * moveInput, 0), ForceMode2D.Impulse);
-                rollSpeed = 0.5f;
+                audioSource.PlayOneShot(rollClip);
+                rollSpeed = 30f;
                 state = State.Rolling;
-                audioSource.PlayOneShot(dashSFX);
-                rollDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0).normalized;
+                rollDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized;
                 isInvincible = true;
                 anim.SetTrigger("Roll");
                 StartCoroutine(CoolDown());
-            }
-            break;
-
-        case State.Rolling:
-            float rollSpeedDropMultiplier = 5f;
-            rollSpeed -= rollSpeed * rollSpeedDropMultiplier * Time.deltaTime;
-            float rollSpeedMinimum = 0.1f;
-            if (rollSpeed < rollSpeedMinimum)
-            {
-                state = State.Moving;
-                isInvincible = false;
             }
             break;
         }   
@@ -217,9 +170,56 @@ public class PlayerMovement : MonoBehaviour
         switch (state)
         {
             case State.Moving:
+                if (isTouchingWall && !isGrounded && rigidBody2D.linearVelocity.y <= 0)
+                {
+                    isWallSliding = true;
+                    anim.SetBool("IsWallSliding", true);
+                    anim.SetBool("Grounded", false);
+                    PlayerAnimationScript.isMovingX = false;
+                    rigidBody2D.linearVelocity = new Vector2(0, rigidBody2D.linearVelocity.y * wallSlideSpeed);
+                }
+                else
+                {
+                    isWallSliding = false;
+                    anim.SetBool("IsWallSliding", false);
+                }
+                //movement
+                moveInput = Input.GetAxisRaw("Horizontal");
+                if (!canWallJump && (!isWallSliding || (isWallSliding && frameCounter >= 3 && ((moveInput > 0 && !isRight) || (moveInput < 0 && isRight)))))
+                {
+                    if (isGrounded)
+                    {
+                        rigidBody2D.linearVelocity = new Vector2(moveInput * speed, rigidBody2D.linearVelocityY);
+                        //transform.position += new Vector3(moveInput, 0, 0) * speed * Time.deltaTime;
+                        //rigidBody2D.linearVelocity = Vector2.Lerp(rigidBody2D.linearVelocity, new Vector2(moveInput * speed * 5, rigidBody2D.linearVelocityY), Time.deltaTime);
+                    }
+                    else
+                    {
+                        Vector2 desiredVelocity = new Vector2(moveInput * speed, rigidBody2D.linearVelocityY);
+                        rigidBody2D.linearVelocity = Vector2.Lerp(rigidBody2D.linearVelocity, desiredVelocity, Time.deltaTime * 5f);
+                    }
+
+                    if (moveInput != 0f)
+                    {
+                        PlayerAnimationScript.isMovingX = true;
+                    }
+                    else if (moveInput == 0f)
+                    {
+                        PlayerAnimationScript.isMovingX = false;
+                    }
+                }
                 break;
             case State.Rolling:
-                transform.position += rollDirection * rollSpeed * speed * 0.2f;
+                rigidBody2D.linearVelocity = rollDirection * rollSpeed;
+                float rollSpeedDropMultiplier = 5f;
+                rollSpeed -= rollSpeed * rollSpeedDropMultiplier * Time.deltaTime;
+                float rollSpeedMinimum = 6f;
+                if (rollSpeed < rollSpeedMinimum)
+                {
+                    state = State.Moving;
+                    isInvincible = false;
+                    rigidBody2D.linearVelocity = Vector3.zero;
+                }
                 break;
         }
     }
@@ -237,9 +237,9 @@ public class PlayerMovement : MonoBehaviour
         {
             axis = 1;
         }
-        Vector3 wallJumpDirection = new Vector3(axis, 1, 0).normalized;
-        rigidBody2D.linearVelocity = new Vector3(wallJumpDirection.x * wallJumpForce * speed * 0.1f, wallJumpDirection.y * wallJumpForce, 0);
-        Invoke("ResetWallJump", 0.5f);
+        Vector2 wallJumpDirection = new Vector2(axis, 1).normalized;
+        rigidBody2D.linearVelocity = new Vector2(wallJumpDirection.x * wallJumpForce * speed * 0.15f, wallJumpDirection.y * wallJumpForce);
+        Invoke("ResetWallJump", 0.05f);
     }
     private void ResetWallJump()
     {

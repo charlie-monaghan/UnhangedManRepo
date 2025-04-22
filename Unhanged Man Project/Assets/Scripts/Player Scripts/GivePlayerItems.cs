@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class GivePlayerItems : MonoBehaviour
 {
+    private Health playerHealth;
     void Start()
     {
+        playerHealth = GetComponent<Health>();
         StartCoroutine(LateStart());
     }
 
@@ -16,7 +18,11 @@ public class GivePlayerItems : MonoBehaviour
                 i.AssignOwner(gameObject);
                 Instantiate(i.itemPrefab, gameObject.transform);
              }
-        
+        //if (playerHealth.currentHealth > playerHealth.maxHealth)
+        //{
+        //    playerHealth.currentHealth = playerHealth.maxHealth;
+        //    PlayerManager.instance.playerHealth = playerHealth.currentHealth;
+        //}
     }
 
     void Update()

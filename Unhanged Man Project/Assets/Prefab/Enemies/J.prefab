@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 398609261542739381, guid: c328e126176bef44aa8e45b3559b3ec6, type: 3}
     - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
       propertyPath: speed
-      value: 150
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
       propertyPath: isFlipped
@@ -62,11 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
       propertyPath: jumpForce
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
       propertyPath: nextWayPointDistance
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965837058297489678, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
+      propertyPath: playerDetectionRange
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6483073773314765810, guid: 0b4b9a2502cecd542b23bdb71a7a19e6, type: 3}
       propertyPath: m_Controller

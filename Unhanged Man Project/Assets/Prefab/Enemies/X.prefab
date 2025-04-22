@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: maxHealth
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: damageSound
       value: 
-      objectReference: {fileID: 8300000, guid: 36de94be2e008c044a0ff408429885a7, type: 3}
+      objectReference: {fileID: 8300000, guid: ec9dbb7688a717241a73f861383ff65c, type: 3}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: hitParticles
       value: 
       objectReference: {fileID: 8296164203542062588, guid: 71960ef3ddc5d0c4c8ab2890cca4105f, type: 3}
     - target: {fileID: 1114472436699436119, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: currentHealth
-      value: 20
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: speed
@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: Attack
       value: 
       objectReference: {fileID: 1971271583074689082}
+    - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
+      propertyPath: idleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 334a29f7f28dc8e45a44e1dc5872836a, type: 3}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: bodyIsWeapon
       value: 1
@@ -46,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: playerDetectionRange
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4215924532541357096, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_Name
@@ -212,7 +216,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 11
+  m_Radius: 10
 --- !u!114 &8706602454317689106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +271,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 10.5
+  m_Radius: 9.5
 --- !u!82 &885579539073907621
 AudioSource:
   m_ObjectHideFlags: 0
@@ -289,10 +293,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 5
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -300,23 +304,32 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.25
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -4.695815
+      outSlope: -4.695815
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0.2080615
+    - serializedVersion: 3
+      time: 0.44708252
+      value: 0.3829651
+      inSlope: -1.608235
+      outSlope: -1.608235
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.16747534
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.10723325
+      outSlope: -0.10723325
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.26315433
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -325,7 +338,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
