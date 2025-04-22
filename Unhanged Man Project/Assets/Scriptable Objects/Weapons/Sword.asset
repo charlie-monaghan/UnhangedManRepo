@@ -20,4 +20,4 @@ MonoBehaviour:
   knockbackForce: 12
   startupLength: 0.167
   attackLength: 0.25
-  recoveryLength: 0.05
+  recoveryLength: 0.1

@@ -25,6 +25,6 @@ public class JumpUpScript : ItemInstance
         base.ItemEffect();
         Debug.Log("" + itemSO.stackAmount);
         PlayerMovement playerMovement = itemSO.GetPlayer().GetComponent<PlayerMovement>();
-        playerMovement.jumpForce = 12f + (0.5f * itemSO.stackAmount);
+        playerMovement.jumpForce = 12f + (1f * itemSO.stackAmount);
     }
 }

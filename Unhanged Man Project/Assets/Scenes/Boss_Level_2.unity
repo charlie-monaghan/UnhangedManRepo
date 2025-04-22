@@ -1248,6 +1248,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe232daad5af81141a551f641c94369c, type: 3}
+--- !u!1001 &1210769810
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9584264530290061, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9134201467037669527, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_Name
+      value: GallowsColliders
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
 --- !u!1001 &1272921304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10135,3 +10192,4 @@ SceneRoots:
   - {fileID: 2114454064}
   - {fileID: 2086250280}
   - {fileID: 1030045683}
+  - {fileID: 1210769810}

@@ -25,6 +25,6 @@ public class SpeedUpScript : ItemInstance
         base.ItemEffect();
         Debug.Log("" + itemSO.stackAmount);
         PlayerMovement playerMovement = itemSO.GetPlayer().GetComponent<PlayerMovement>();
-        playerMovement.speed = 6f + (0.5f * itemSO.stackAmount);
+        playerMovement.speed = 6f + (1f * itemSO.stackAmount);
     }
 }
