@@ -489,7 +489,7 @@ MonoBehaviour:
   groundCheckForAnimatorRadius: 0.4
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   wallCheck: {fileID: 5212830140359480015}
   wallCheckRadius: 0.1
 --- !u!114 &653763757426926196
@@ -594,8 +594,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.05125332, y: -0.3684125}
-  m_Size: {x: 3.191852, y: 5.8218794}
+  m_Offset: {x: -0.05125332, y: -0.423985}
+  m_Size: {x: 3.191852, y: 5.7107344}
   m_Direction: 0
 --- !u!82 &2901679921487003481
 AudioSource:
