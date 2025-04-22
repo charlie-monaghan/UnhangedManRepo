@@ -158,6 +158,10 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 766250518955716923, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6161192910277031749, guid: 95fd05643c633e945aee6dec2dde3d17, type: 2}
     - target: {fileID: 2669876582202766901, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: m_Size.x
       value: 9.1

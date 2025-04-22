@@ -101,7 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae7fd5d13a3a62408b0ad33a5bb8704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthToHeal: 2
+  healthToHeal: 1
+  guaranteedToSpawn: 0
+  spawnThreshold: 2
 --- !u!61 &7574852246905023277
 BoxCollider2D:
   m_ObjectHideFlags: 0
