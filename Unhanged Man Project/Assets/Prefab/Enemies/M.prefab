@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: nextWayPointDistance
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5846474085579543668, guid: aac6e537599e20940916c52270667d2d, type: 3}
+      propertyPath: playerDetectionRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6416883675717689701, guid: aac6e537599e20940916c52270667d2d, type: 3}
       propertyPath: m_Name
       value: M
