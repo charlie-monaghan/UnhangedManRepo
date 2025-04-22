@@ -73,7 +73,7 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if (!playerDetected && Mathf.Abs(rb.position.x - target.position.x) < playerDetectionRange)
+        if (!playerDetected && Mathf.Abs(rb.position.x - target.position.x) < playerDetectionRange && Mathf.Abs(rb.position.y - target.position.y) < playerDetectionRange * 0.5f)
         {
             playerDetected = true;
         }
