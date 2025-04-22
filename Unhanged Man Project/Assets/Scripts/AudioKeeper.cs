@@ -32,6 +32,12 @@ public class AudioKeeper : MonoBehaviour
     
     private void SceneAudio(Scene scene, LoadSceneMode loadScene)
     {
+        if (scene.name == "Settings") //no switiching tracks when opening/closing settings page
+        {
+            Debug.Log("Settings scene! (keeping current music)");
+            return;
+        }
+
         foreach (string regLevel in levelsRegular) //checks each "regular" level name in string array 
         {
             //Debug.Log(regLevel);
