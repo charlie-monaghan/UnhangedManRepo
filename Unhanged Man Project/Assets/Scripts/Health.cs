@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] private AudioClip damageSound;
     [SerializeField] public GameObject hitParticles;
     [SerializeField] public GameObject deathParticles;
+    public GameObject healthPickupPrefab;
     private AudioSource audioSource;
     private AudioSource persSource;
 
@@ -43,6 +44,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0 && tag != "Player")
         {
             Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(healthPickupPrefab, gameObject.transform.position, new Quaternion(0, 0, 0, 0));
             persSource.PlayOneShot(damageSound);
             gameObject.SetActive(false);
             onBossEnemyDeath?.Invoke();

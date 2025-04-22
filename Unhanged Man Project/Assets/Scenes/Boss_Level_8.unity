@@ -6630,6 +6630,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8544700738373416236, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9134201467037669527, guid: 791a5cfd42de8c740a87ae356945a506, type: 3}
       propertyPath: m_Name
       value: GallowsColliders

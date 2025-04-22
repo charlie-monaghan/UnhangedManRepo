@@ -131,6 +131,7 @@ MonoBehaviour:
   damageSound: {fileID: 8300000, guid: ec9dbb7688a717241a73f861383ff65c, type: 3}
   hitParticles: {fileID: 8296164203542062588, guid: dd248af9a5b300742bf0b5413e55e2dc, type: 3}
   deathParticles: {fileID: 8522131096204034422, guid: 58dc67383580aec4cb2e768a5e6d2fdd, type: 3}
+  healthPickupPrefab: {fileID: 2760868217498201436, guid: e38b728ed2e1a934d99bdbfa1bb258b7, type: 3}
 --- !u!50 &5039333755736985608
 Rigidbody2D:
   serializedVersion: 5
