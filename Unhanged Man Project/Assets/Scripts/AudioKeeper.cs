@@ -32,9 +32,9 @@ public class AudioKeeper : MonoBehaviour
     
     private void SceneAudio(Scene scene, LoadSceneMode loadScene)
     {
-        if (scene.name == "Settings") //no switiching tracks when opening/closing settings page
+        if (scene.name == "Settings" || scene.name == "Credits") //no switiching tracks when opening/closing settings or credits page
         {
-            Debug.Log("Settings scene! (keeping current music)");
+            Debug.Log($"{scene.name} scene! (keeping current music)");
             return;
         }
 
