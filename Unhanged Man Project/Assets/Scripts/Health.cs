@@ -11,7 +11,6 @@ public class Health : MonoBehaviour
     private AudioSource audioSource;
     private AudioSource persSource;
 
-    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip damageSFX;
     [SerializeField] private AudioClip healSFX;
 
