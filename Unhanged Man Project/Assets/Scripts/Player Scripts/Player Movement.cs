@@ -29,6 +29,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckForAnimatorRadius = 0.4f;
     [SerializeField] private LayerMask groundLayer;
 
+    // player moving audios
+    [SerializeField] private AudioClip jumpSFX;
+    [SerializeField] private AudioClip walkSFX;
+    [SerializeField] private AudioClip dashSFX;
+    private bool isPlayWalk;
+      
+
     [Header("Wall Detection")]
     public Transform wallCheck;
     public float wallCheckRadius = 0.2f;
@@ -59,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         isGroundedForAnimator = false;
         rigidBody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>(); // audio init
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -90,8 +98,8 @@ public class PlayerMovement : MonoBehaviour
            
             
 
-            //fliping sprite
-            if (!PlayerAttack.isAttacking && !isWallSliding) //Can't flip while attacking or wall sliding
+                //fliping sprite
+                if (!PlayerAttack.isAttacking && !isWallSliding) //Can't flip while attacking or wall sliding
             {
                 if (moveInput > 0 && !isRight)
                 {
@@ -116,6 +124,8 @@ public class PlayerMovement : MonoBehaviour
                 if (isGrounded)
                 {
                     anim.SetTrigger("Jump");
+                    // play jump sound
+                    audioSource.PlayOneShot(jumpSFX);
                     rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                     audioSource.PlayOneShot(jumpClip);
                     canWallJump = true;
@@ -124,6 +134,8 @@ public class PlayerMovement : MonoBehaviour
                 else if (isWallSliding)
                 {
                     anim.SetTrigger("Jump");
+                    // play jump sound
+                    audioSource.PlayOneShot(jumpSFX);
                     WallJump();
                 }
             }
