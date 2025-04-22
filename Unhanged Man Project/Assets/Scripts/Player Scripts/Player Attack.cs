@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject Attack;
     [SerializeField] private float attackDuration = 1.0f;
     public static bool isAttacking = false;
+    public static bool canAttack = true;
     [SerializeField] public Weapon currentWeapon;
     [SerializeField] public Weapon secondWeapon;
     [SerializeField] public AudioClip attackClip;
@@ -70,9 +71,10 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator attackLogic()
     {
-        if (isAttacking) yield break; // if attack is already happening, break
+        if (!canAttack) yield break; // if cooldown active, break
 
         anim.SetTrigger("AttackInput");
+        canAttack = false;
         isAttacking = true; // player is attacking
         yield return new WaitForEndOfFrame();
         yield return new WaitForSeconds(currentWeapon.startupLength - 0.1f); // wait for the start up before attack can hit
@@ -85,9 +87,11 @@ public class PlayerAttack : MonoBehaviour
         Attack.SetActive(true); // turn damage field on
         yield return new WaitForSeconds(currentWeapon.attackLength); // wait for attack to finish
         Attack.SetActive(false); // turn damage field off
-
-        yield return new WaitForSeconds(currentWeapon.recoveryLength); // wait recovery time
+        yield return new WaitForSeconds(0.1f);
         isAttacking = false; // player no longer attacking
+
+        yield return new WaitForSeconds(currentWeapon.recoveryLength - 0.1f); // wait recovery time
+        canAttack = true; // player no longer attacking
     }
     public void PassDamageThrough()
     {

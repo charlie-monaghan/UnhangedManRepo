@@ -155,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
         switch (state)
         {
             case State.Moving:
-                if (isTouchingWall && !isGrounded && rigidBody2D.linearVelocity.y < 0)
+                if (isTouchingWall && !isGrounded && rigidBody2D.linearVelocity.y <= 0)
                 {
                     isWallSliding = true;
                     anim.SetBool("IsWallSliding", true);
@@ -170,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 //movement
                 moveInput = Input.GetAxisRaw("Horizontal");
-                if (!isWallSliding || (isWallSliding && frameCounter >= 5))
+                if (!canWallJump && (!isWallSliding || (isWallSliding && frameCounter >= 5 && ((moveInput > 0 && !isRight) || (moveInput < 0 && isRight)))))
                 {
                     rigidBody2D.linearVelocity = new Vector2(moveInput * speed, rigidBody2D.linearVelocityY);
                    // transform.position += new Vector3(moveInput, 0, 0) * speed * Time.deltaTime;
@@ -213,9 +213,9 @@ public class PlayerMovement : MonoBehaviour
         {
             axis = 1;
         }
-        Vector3 wallJumpDirection = new Vector3(axis, 1, 0).normalized;
-        rigidBody2D.linearVelocity = new Vector3(wallJumpDirection.x * wallJumpForce * speed * 0.1f, wallJumpDirection.y * wallJumpForce, 0);
-        Invoke("ResetWallJump", 0.5f);
+        Vector2 wallJumpDirection = new Vector2(axis, 1).normalized;
+        rigidBody2D.linearVelocity = new Vector2(wallJumpDirection.x * wallJumpForce * speed * 0.15f, wallJumpDirection.y * wallJumpForce);
+        Invoke("ResetWallJump", 0.1f);
     }
     private void ResetWallJump()
     {
