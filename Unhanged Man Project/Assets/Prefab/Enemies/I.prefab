@@ -108,6 +108,10 @@ PrefabInstance:
       propertyPath: attackCooldownTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4603786388615763332, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
+      propertyPath: playerDetectionRange
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4683557662633946212, guid: 00ddd8684e079bc4b81bdd5e646daa0a, type: 3}
       propertyPath: m_Sprite
       value: 

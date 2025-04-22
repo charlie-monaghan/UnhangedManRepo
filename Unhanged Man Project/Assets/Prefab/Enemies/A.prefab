@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3651989966602520889, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: playerDetectionRange
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4215924532541357096, guid: fb53f9b0aa930c4429b40decce91511e, type: 3}
       propertyPath: m_Name

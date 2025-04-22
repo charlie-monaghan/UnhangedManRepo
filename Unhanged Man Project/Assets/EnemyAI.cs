@@ -109,7 +109,7 @@ public class EnemyAI : MonoBehaviour
         
         if (!groundedEnemy)
         {
-            rb.MoveRotation(rb.rotation - 0.5f * speed * Time.fixedDeltaTime);
+            rb.MoveRotation(rb.rotation - 0.5f * speed * Time.fixedDeltaTime / rb.mass);
         }
         
         if (reachedEndOfPath)

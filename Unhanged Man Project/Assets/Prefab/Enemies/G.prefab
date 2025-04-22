@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 9202060142997513903, guid: 2d62728a3002db641a67651be1455a2d, type: 3}
+    - target: {fileID: 2048312252043797487, guid: 257b96a0aca6df34db65c21badbbd541, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2757153425196106317, guid: 257b96a0aca6df34db65c21badbbd541, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -73,8 +77,12 @@ PrefabInstance:
       value: G
       objectReference: {fileID: 0}
     - target: {fileID: 7722591421799234270, guid: 257b96a0aca6df34db65c21badbbd541, type: 3}
+      propertyPath: speed
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722591421799234270, guid: 257b96a0aca6df34db65c21badbbd541, type: 3}
       propertyPath: playerDetectionRange
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
