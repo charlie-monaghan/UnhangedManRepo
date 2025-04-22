@@ -34,8 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip walkSFX;
     [SerializeField] private AudioClip dashSFX;
     private bool isPlayWalk;
-    private AudioSource audioSource;
-    
+      
 
     [Header("Wall Detection")]
     public Transform wallCheck;

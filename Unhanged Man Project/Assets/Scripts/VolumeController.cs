@@ -20,6 +20,8 @@ public class VolumeController : MonoBehaviour
         // listener for when slider changes volume value
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+        // 
+
 
     }
 
