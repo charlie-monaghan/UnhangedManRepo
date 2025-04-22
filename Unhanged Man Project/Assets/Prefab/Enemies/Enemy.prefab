@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5852710404891477302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5039333755736985608}
   - component: {fileID: 1282137178133294654}
   - component: {fileID: 3651989966602520889}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 4338173325584889894}
   - component: {fileID: 3007685000061019272}
   - component: {fileID: 7390234655973435772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6857007703727955676}
   - component: {fileID: 5598748615267856601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyGFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}

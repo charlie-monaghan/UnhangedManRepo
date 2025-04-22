@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
         if (isInvincible)
         {
-            rigidBody2D.excludeLayers = LayerMask.GetMask("Default");
+            rigidBody2D.excludeLayers = LayerMask.GetMask("Enemies");
         }
         else
         {
@@ -118,6 +118,8 @@ public class PlayerMovement : MonoBehaviour
                     anim.SetTrigger("Jump");
                     rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                     audioSource.PlayOneShot(jumpClip);
+                    canWallJump = true;
+                    Invoke("ResetWallJump", 0.1f);
                 }
                 else if (isWallSliding)
                 {
@@ -170,11 +172,20 @@ public class PlayerMovement : MonoBehaviour
                 }
                 //movement
                 moveInput = Input.GetAxisRaw("Horizontal");
-                if (!canWallJump && (!isWallSliding || (isWallSliding && frameCounter >= 5 && ((moveInput > 0 && !isRight) || (moveInput < 0 && isRight)))))
+                if (!canWallJump && (!isWallSliding || (isWallSliding && frameCounter >= 3 && ((moveInput > 0 && !isRight) || (moveInput < 0 && isRight)))))
                 {
-                    rigidBody2D.linearVelocity = new Vector2(moveInput * speed, rigidBody2D.linearVelocityY);
-                   // transform.position += new Vector3(moveInput, 0, 0) * speed * Time.deltaTime;
-                    //rigidBody2D.linearVelocity = Vector2.Lerp(rigidBody2D.linearVelocity, new Vector2(moveInput * speed * 5, rigidBody2D.linearVelocityY), Time.deltaTime);
+                    if (isGrounded)
+                    {
+                        rigidBody2D.linearVelocity = new Vector2(moveInput * speed, rigidBody2D.linearVelocityY);
+                        //transform.position += new Vector3(moveInput, 0, 0) * speed * Time.deltaTime;
+                        //rigidBody2D.linearVelocity = Vector2.Lerp(rigidBody2D.linearVelocity, new Vector2(moveInput * speed * 5, rigidBody2D.linearVelocityY), Time.deltaTime);
+                    }
+                    else
+                    {
+                        Vector2 desiredVelocity = new Vector2(moveInput * speed, rigidBody2D.linearVelocityY);
+                        rigidBody2D.linearVelocity = Vector2.Lerp(rigidBody2D.linearVelocity, desiredVelocity, Time.deltaTime * 5f);
+                    }
+
                     if (moveInput != 0f)
                     {
                         PlayerAnimationScript.isMovingX = true;
@@ -215,7 +226,7 @@ public class PlayerMovement : MonoBehaviour
         }
         Vector2 wallJumpDirection = new Vector2(axis, 1).normalized;
         rigidBody2D.linearVelocity = new Vector2(wallJumpDirection.x * wallJumpForce * speed * 0.15f, wallJumpDirection.y * wallJumpForce);
-        Invoke("ResetWallJump", 0.1f);
+        Invoke("ResetWallJump", 0.05f);
     }
     private void ResetWallJump()
     {
