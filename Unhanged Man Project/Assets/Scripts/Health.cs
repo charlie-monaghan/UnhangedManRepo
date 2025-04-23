@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -96,6 +97,8 @@ public class Health : MonoBehaviour
         if (tag == "Player")
         {
             PlayerManager.instance.playerHealth = currentHealth;
+            gameObject.GetComponent<PlayerMovement>().iFrames = true;
+            Invoke("StopIFrames", 2);
         }
         if (audioSource != null && damageSFX != null) {
             audioSource.PlayOneShot(damageSFX);
@@ -115,5 +118,13 @@ public class Health : MonoBehaviour
     public int ReturnHealth()
     {
         return currentHealth;
+    }
+
+    public void StopIFrames()
+    {
+        if (tag == "Player")
+        {
+            gameObject.GetComponent<PlayerMovement>().iFrames = false;
+        }
     }
 }

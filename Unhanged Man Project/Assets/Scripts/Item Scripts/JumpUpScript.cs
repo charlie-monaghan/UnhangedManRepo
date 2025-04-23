@@ -26,6 +26,6 @@ public class JumpUpScript : ItemInstance
         Debug.Log("" + itemSO.stackAmount);
         PlayerMovement playerMovement = itemSO.GetPlayer().GetComponent<PlayerMovement>();
         playerMovement.jumpForce = 12f + (1f * itemSO.stackAmount);
-        playerMovement.wallJumpForce = 15f + (1f * itemSO.stackAmount);
+        playerMovement.wallJumpForce = 15.5f + (1f * itemSO.stackAmount);
     }
 }

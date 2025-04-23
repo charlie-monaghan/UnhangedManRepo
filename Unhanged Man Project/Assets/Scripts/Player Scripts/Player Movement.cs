@@ -1,6 +1,8 @@
 //Created by: charlie
 //Edited by: eddie and Carter
 using System.Collections;
+using Unity.VisualScripting;
+
 //using UnityEditor.Rendering;
 using UnityEngine;
 //using UnityEngine.Rendering;
@@ -11,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float jumpForce;
     [SerializeField] private float rollSpeed;
     [SerializeField] private float coolDownTime;
-    [SerializeField] private bool isInvincible;
+    [SerializeField] public bool isInvincible;
+    [SerializeField] public bool iFrames;
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isGroundedForAnimator; //has a larger radius to update animation quicker
     [SerializeField] private bool isTouchingWall;
@@ -57,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     private int frameCounter;
 
     Animator anim;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -67,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         rigidBody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>(); // audio init
-        audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -77,12 +81,26 @@ public class PlayerMovement : MonoBehaviour
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, groundLayer);
         if (isInvincible)
         {
-            rigidBody2D.excludeLayers = LayerMask.GetMask("Enemies");
+            GetComponent<CapsuleCollider2D>().excludeLayers = LayerMask.GetMask("Enemies");
         }
         else
         {
-            rigidBody2D.excludeLayers = LayerMask.GetMask("Nothing");
+            GetComponent<CapsuleCollider2D>().excludeLayers = LayerMask.GetMask("Nothing");
         }
+        if (iFrames)
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 0.67f);
+            isInvincible = true;
+        }
+        else
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 1);
+            if (state != State.Rolling)
+            {
+                isInvincible = false;
+            }
+        }
+
         switch (state) {
         case State.Moving:
             //Grounded check for animator
