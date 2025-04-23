@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static bool paused = false; 
     [SerializeField] GameObject pauseMenu;
-    void Start()
+    void Awake()
     {
-
+        DontDestroyOnLoad(pauseMenu);
     }
 
     // Update is called once per frame
@@ -28,10 +30,22 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
+        //Debug.Log(paused);
+        paused = false;
     }
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
+        paused = true;
+        //Debug.Log(paused);
+        pauseMenu.SetActive(true);     
         Time.timeScale = 0f;
     }
+
+   /* public void ForMainMenu()
+    {
+        ResumeGame();
+        Debug.Log(paused);
+        SceneManager.LoadScene("Main Menu");        
+        //Destroy(pauseMenu);
+    }*/
 }
