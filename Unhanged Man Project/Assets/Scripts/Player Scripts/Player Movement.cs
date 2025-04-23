@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isWallSliding;
     [SerializeField] private bool canWallJump;
     [SerializeField] private float wallSlideSpeed; //0.5f
-    [SerializeField] private float wallJumpForce; //2.0f
+    [SerializeField] public float wallJumpForce; //2.0f
     [SerializeField] private AudioClip jumpClip;
     [SerializeField] private AudioClip rollClip;
     private AudioSource audioSource;
