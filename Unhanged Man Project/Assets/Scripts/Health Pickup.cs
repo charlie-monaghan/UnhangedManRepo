@@ -14,7 +14,7 @@ public class HealthPickup : MonoBehaviour
 
         if (!guaranteedToSpawn)
         {
-            if (UnityEngine.Random.Range(0f, 10f) * player.GetComponent<Health>().currentHealth / player.GetComponent<Health>().maxHealth >= spawnThreshold)
+            if (player.GetComponent<Health>().currentHealth == player.GetComponent<Health>().maxHealth || UnityEngine.Random.Range(0f, 10f) * player.GetComponent<Health>().currentHealth / player.GetComponent<Health>().maxHealth >= spawnThreshold)
             {
                 gameObject.SetActive(false);
             }
