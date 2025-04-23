@@ -195,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
                     else
                     {
                         Vector2 desiredVelocity = new Vector2(moveInput * speed, rigidBody2D.linearVelocityY);
-                        rigidBody2D.linearVelocity = Vector2.Lerp(rigidBody2D.linearVelocity, desiredVelocity, Time.deltaTime * 5f);
+                        rigidBody2D.linearVelocity = (rigidBody2D.linearVelocity * 7 + desiredVelocity) / 8f;
                     }
 
                     if (moveInput != 0f)

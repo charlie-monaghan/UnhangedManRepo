@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthToHeal: 1
   guaranteedToSpawn: 0
-  spawnThreshold: 2
+  spawnThreshold: 1
 --- !u!61 &7574852246905023277
 BoxCollider2D:
   m_ObjectHideFlags: 0
