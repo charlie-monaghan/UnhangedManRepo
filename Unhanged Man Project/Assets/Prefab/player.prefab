@@ -533,8 +533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2563f538e310c9a45b71e5d243a796b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 10
+  maxHealth: 5
+  currentHealth: 5
   damageSound: {fileID: 8300000, guid: de509ca6076853d4f97bf7ca2b67ed9a, type: 3}
   hitParticles: {fileID: 8296164203542062588, guid: 54ea600cd8dbb1043a4eddb862f20593, type: 3}
   deathParticles: {fileID: 8522131096204034422, guid: 58dc67383580aec4cb2e768a5e6d2fdd, type: 3}
